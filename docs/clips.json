@@ -5,7 +5,7 @@
   "ambAt": []
  },
  "P02": {
-  "dur": 18.1,
+  "dur": 21.3,
   "amb": null,
   "ambAt": []
  },
@@ -26,6 +26,16 @@
  },
  "P03-vert": {
   "dur": 6.0,
+  "amb": null,
+  "ambAt": []
+ },
+ "P03-rose": {
+  "dur": 6.3,
+  "amb": null,
+  "ambAt": []
+ },
+ "P03-violet": {
+  "dur": 6.8,
   "amb": null,
   "ambAt": []
  },
@@ -209,6 +219,16 @@
   "amb": null,
   "ambAt": []
  },
+ "E3-SAC-rose": {
+  "dur": 11.4,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-SAC-violet": {
+  "dur": 10.9,
+  "amb": null,
+  "ambAt": []
+ },
  "E3-02": {
   "dur": 32.4,
   "amb": null,
@@ -301,6 +321,16 @@
  },
  "F-SAC-vert": {
   "dur": 15.7,
+  "amb": null,
+  "ambAt": []
+ },
+ "F-SAC-rose": {
+  "dur": 15.5,
+  "amb": null,
+  "ambAt": []
+ },
+ "F-SAC-violet": {
+  "dur": 15.6,
   "amb": null,
   "ambAt": []
  },

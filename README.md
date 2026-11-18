@@ -2,7 +2,7 @@
 
 Livre audio interactif pour enfants de 3 à 6 ans (~12 min). L'enfant est le héros ou l'héroïne : au son du carillon,
 il dit sa réponse à voix haute et le parent touche le bouton correspondant sur le téléphone.
-Choix, tirages au sort et récompenses donnent **25 920 parcours** différents.
+Choix, tirages au sort et récompenses donnent **38 880 parcours** différents.
 
 ## Écouter
 L'application est dans `docs/` : un site statique (HTML/JS, sans serveur) installable sur l'écran d'accueil
@@ -19,7 +19,7 @@ du téléphone (PWA) et utilisable hors connexion une fois chargé.
 | `source/histoire.txt` | Texte de tous les clips, avec les balises de bruitages, pauses et ambiances |
 | `docs/scenario.json` | L'arbre de l'histoire : choix, tirages au sort, variables (couleur du sac, animal…), étoiles |
 | `docs/index.html` | Le lecteur (Web Audio : voix + ambiance en boucle + musique d'attente pendant les choix) |
-| `docs/audio/clips/` | Les 62 clips MP3 générés (voix + bruitages mixés) |
+| `docs/audio/clips/` | Les 68 clips MP3 générés (voix + bruitages mixés) |
 | `docs/audio/amb/` | Ambiances en boucle (forêt, rivière, soir, nuit, grotte, accueil, féerique, berceuse, attente) |
 | `docs/clips.json` | Généré : durée de chaque clip et changements d'ambiance en cours de clip |
 | `tools/build_sfx.py` | Prépare les bruitages et les ambiances (télécharge les sons sources, synthétise les sons magiques) |

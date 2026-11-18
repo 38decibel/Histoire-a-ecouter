@@ -20,7 +20,7 @@ Pendant l'histoire, tu vas devoir faire des choix. Écoute bien. Quand tu entend
 Et tu sais quoi ? Il n'y a pas de mauvaise réponse. Toutes les réponses mènent à l'aventure !
 
 === P02
-Alors, on fait un petit essai ensemble ? Pour partir à l'aventure, il te faut un sac à dos magique. {scintillement} De quelle couleur est-il ? Rouge ? Bleu ? Jaune ? Ou vert ?
+Alors, on fait un petit essai ensemble ? {pause 1.5} Pour partir à l'aventure, il te faut un sac à dos magique. {scintillement} De quelle couleur est-il ? Rouge ? Bleu ? Jaune ? Vert ? Rose ? Ou violet ?
 Dis ta couleur à papa ou maman !
 {carillon}
 
@@ -35,6 +35,12 @@ Dis ta couleur à papa ou maman !
 
 === P03-vert
 {ding} Vert ! Vert comme une petite grenouille. Quel joli sac !
+
+=== P03-rose
+{ding} Oh, du rose ! Rose comme une barbe à papa. Quel joli sac !
+
+=== P03-violet
+{ding} Oh, du violet ! Violet comme les fleurs de lavande. Quel joli sac !
 
 === P04
 Bravo, tu as compris le jeu ! Mets ton sac sur ton dos… {zip} voilà.
@@ -198,6 +204,12 @@ Il brille d'une belle lumière jaune, toute douce, comme un petit soleil de poch
 === E3-SAC-vert
 Il brille d'une belle lumière verte, toute douce, comme une grosse luciole ! Autour de toi, l'herbe et les arbres deviennent tout verts. Maintenant, tu y vois très bien.
 
+=== E3-SAC-rose
+Il brille d'une belle lumière rose, toute douce, comme une barbe à papa qui ferait de la lumière ! Autour de toi, l'herbe et les arbres deviennent tout roses. Maintenant, tu y vois très bien.
+
+=== E3-SAC-violet
+Il brille d'une belle lumière violette, toute douce, comme un petit bouquet de lavande ! Autour de toi, l'herbe et les arbres deviennent tout violets. Maintenant, tu y vois très bien.
+
 === E3-02
 Avec ta lumière magique, tu montes, tu montes la colline… {pas_herbe} Tout en haut, il y a deux endroits.
 D'un côté, une petite grotte… et dedans, on voit plein de minuscules points qui scintillent.
@@ -287,6 +299,12 @@ L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière :
 
 === F-SAC-vert
 L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière verte, verte comme une petite grenouille. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
+
+=== F-SAC-rose
+L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière rose, rose comme une barbe à papa. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
+
+=== F-SAC-violet
+L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière violette, violette comme la lavande. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
 
 === F-R-compagnon-lapin
 L: Et puis… quelqu'un voudrait te dire bonne nuit.
