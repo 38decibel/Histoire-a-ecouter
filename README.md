@@ -17,7 +17,7 @@ du téléphone (PWA) et utilisable hors connexion une fois chargé.
 | Chemin | Rôle |
 |---|---|
 | `source/histoire.txt` | Texte de tous les clips, avec les balises de bruitages, pauses et ambiances |
-| `docs/scenario.json` | L'arbre de l'histoire : choix, tirages au sort, variables (couleur du sac, animal…), étoiles |
+| `docs/scenario.json` | L'arbre de l'histoire : choix, tirages au sort, variables (couleur du sac, animal…), étoiles, délai de réponse (`choiceTimeout`, 30 s : ensuite le hasard choisit) |
 | `docs/index.html` | Le lecteur (Web Audio : voix + ambiance en boucle + musique d'attente pendant les choix) |
 | `docs/audio/clips/` | Les 68 clips MP3 générés (voix + bruitages mixés) |
 | `docs/audio/amb/` | Ambiances en boucle (forêt, rivière, soir, nuit, grotte, accueil, féerique, berceuse, attente) |

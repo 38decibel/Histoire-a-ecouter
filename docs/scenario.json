@@ -1,6 +1,7 @@
 {
  "title": "Les trois étoiles de la fée Lumina",
  "start": "P01",
+ "choiceTimeout": 30,
  "nodes": {
   "P01": {"scene": "accueil", "play": "P01", "next": "P02"},
   "P02": {"play": "P02", "choice": {"question": "De quelle couleur est le sac à dos ?", "var": "couleur", "options": [

@@ -56,6 +56,12 @@
   #loading i { display:block; height:100%; width:0; background:var(--gold); transition:width .2s; }
   .hint { font-size:14px; opacity:.7; }
   #vol { width:160px; accent-color: var(--gold); }
+  #cd { width:100%; max-width:560px; height:12px; background:#ffffff22; border-radius:8px; overflow:hidden; }
+  #cd i { display:block; height:100%; width:100%; background:var(--gold); border-radius:8px; transition: width .1s linear, background .5s; }
+  #cd.urgent i { background:#ff8a65; }
+  #cd-txt { font-size:15px; opacity:.85; min-height:20px; margin-top:-8px; }
+  .opt.auto { animation: glow .9s ease infinite; outline:5px solid var(--gold); }
+  @keyframes glow { 50% { transform: scale(1.06); } }
   .twinkle { position:fixed; inset:0; pointer-events:none; z-index:-1; }
 </style>
 </head>
@@ -77,7 +83,7 @@
   <div class="moon" id="scene-icon">🌙</div>
   <div id="scene-title"></div>
   <div class="bar">
-    <button class="small" id="btn-pause">⏸ Pause</button>
+    <button class="small btn-pause">⏸ Pause</button>
   </div>
 </section>
 
@@ -85,7 +91,9 @@
   <div class="stars" id="stars2"></div>
   <div id="question"></div>
   <div id="options"></div>
-  <div class="bar"><button class="small" id="btn-replay">🔁 Réécouter</button></div>
+  <div id="cd"><i></i></div>
+  <div id="cd-txt"></div>
+  <div class="bar"><button class="small" id="btn-replay">🔁 Réécouter</button> <button class="small btn-pause">⏸ Pause</button></div>
 </section>
 
 <section class="screen" id="s-end">
@@ -246,7 +254,7 @@ function ask(n) {
     b.innerHTML = `<span class="ic">${fill(o.icon)}</span><span>${fill(o.label)}</span>`;
     b.onclick = () => {
       if (node !== n) return;
-      stopWait();
+      stopCountdown(); stopWait();
       if (c.var) vars[c.var] = o.value;
       go(o.next || c.next);
     };
@@ -254,7 +262,37 @@ function ask(n) {
   });
   show('s-choice');
   startWait();
+  startCountdown(n, () => {
+    // personne n'a répondu : le hasard choisit à la place du parent
+    const btns = [...box.querySelectorAll('.opt')];
+    const b = btns[Math.floor(Math.random() * btns.length)];
+    b.classList.add('auto'); $('#cd-txt').textContent = '✨ Le hasard a choisi !';
+    setTimeout(() => { if (node === n) b.onclick(); }, 1200);
+  });
 }
+
+// ---------- compte à rebours pendant les choix ----------
+let cdTimer = null;
+function startCountdown(n, onDone) {
+  const total = SC.choiceTimeout || 30;
+  let left = total, last = performance.now();
+  const bar = $('#cd'), txt = $('#cd-txt');
+  const render = () => {
+    bar.firstElementChild.style.width = Math.max(0, 100 * left / total) + '%';
+    bar.classList.toggle('urgent', left <= 5);
+    txt.textContent = '⏳ ' + Math.max(0, Math.ceil(left)) + ' s';
+  };
+  clearInterval(cdTimer); render();
+  cdTimer = setInterval(() => {
+    const now = performance.now();
+    if (!paused) left -= (now - last) / 1000;
+    last = now;
+    if (node !== n) return clearInterval(cdTimer);
+    render();
+    if (left <= 0) { clearInterval(cdTimer); onDone(); }
+  }, 100);
+}
+function stopCountdown() { clearInterval(cdTimer); }
 
 function finish() {
   show('s-end');
@@ -265,13 +303,13 @@ function finish() {
 async function start() {
   if (!ctx) initAudio();
   await ctx.resume();
-  vars = {}; stars = 0; renderStars(); paused = false; $('#btn-pause').textContent = '⏸ Pause';
+  vars = {}; stars = 0; renderStars(); paused = false; setPauseLabels();
   $('#btn-restart').style.display = '';
   requestWake();
   go(SC.start);
 }
 function stopAll() {
-  node = null; stopWait(); clearInterval(ambTimer);
+  node = null; stopWait(); stopCountdown(); clearInterval(ambTimer);
   if (voiceSrc) { const s = voiceSrc; voiceSrc = null; s.onended = null; try { s.stop(); } catch (e) {} }
 }
 
@@ -286,14 +324,14 @@ $('#btn-again').onclick = () => { stopAll(); setAmb(null); start(); };
 $('#btn-restart').onclick = () => { if (confirmRestart()) { stopAll(); setAmb(null); start(); } };
 function confirmRestart() { const b = $('#btn-restart'); if (b.dataset.armed) { delete b.dataset.armed; b.textContent = '⟲ Recommencer'; return true; }
   b.dataset.armed = 1; b.textContent = 'Toucher encore pour recommencer'; setTimeout(() => { delete b.dataset.armed; b.textContent = '⟲ Recommencer'; }, 3000); return false; }
-$('#btn-pause').onclick = async () => {
-  paused = !paused;
-  if (paused) { await ctx.suspend(); $('#btn-pause').textContent = '▶ Reprendre'; }
-  else { await ctx.resume(); $('#btn-pause').textContent = '⏸ Pause'; }
-};
+const setPauseLabels = () => document.querySelectorAll('.btn-pause').forEach(b => b.textContent = paused ? '▶ Reprendre' : '⏸ Pause');
+document.querySelectorAll('.btn-pause').forEach(btn => btn.onclick = async () => {
+  paused = !paused; setPauseLabels();
+  if (paused) await ctx.suspend(); else await ctx.resume();
+});
 $('#btn-replay').onclick = async () => {
   const n = node; if (!n) return;
-  stopWait(); show('s-play');
+  stopCountdown(); stopWait(); show('s-play');
   await playClip(fill(n.play));
   if (node === n) ask(n);
 };
