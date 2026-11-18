@@ -1,0 +1,15 @@
+{
+  "name": "Les trois étoiles de la fée Lumina",
+  "short_name": "Lumina",
+  "description": "Une histoire à écouter dont l'enfant est le héros.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1b1640",
+  "theme_color": "#1b1640",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}

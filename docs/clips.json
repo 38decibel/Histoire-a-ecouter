@@ -1,0 +1,332 @@
+{
+ "P01": {
+  "dur": 47.2,
+  "amb": "accueil",
+  "ambAt": []
+ },
+ "P02": {
+  "dur": 19.0,
+  "amb": null,
+  "ambAt": []
+ },
+ "P03-rouge": {
+  "dur": 7.1,
+  "amb": null,
+  "ambAt": []
+ },
+ "P03-bleu": {
+  "dur": 7.2,
+  "amb": null,
+  "ambAt": []
+ },
+ "P03-jaune": {
+  "dur": 6.7,
+  "amb": null,
+  "ambAt": []
+ },
+ "P03-vert": {
+  "dur": 7.0,
+  "amb": null,
+  "ambAt": []
+ },
+ "P04": {
+  "dur": 16.9,
+  "amb": null,
+  "ambAt": [
+   {
+    "at": 6.5,
+    "amb": "stop"
+   }
+  ]
+ },
+ "P05": {
+  "dur": 35.8,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-01": {
+  "dur": 38.1,
+  "amb": "foret",
+  "ambAt": []
+ },
+ "E1-A": {
+  "dur": 25.1,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-B": {
+  "dur": 22.9,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-R-lapin": {
+  "dur": 28.6,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-R-herisson": {
+  "dur": 31.8,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-N1": {
+  "dur": 9.9,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-N2": {
+  "dur": 7.2,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-N3": {
+  "dur": 9.7,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-N4": {
+  "dur": 8.7,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-N5": {
+  "dur": 12.4,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-E-lapin": {
+  "dur": 23.6,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-E-herisson": {
+  "dur": 18.0,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-FIN": {
+  "dur": 26.2,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-01": {
+  "dur": 36.8,
+  "amb": "riviere",
+  "ambAt": []
+ },
+ "E2-A": {
+  "dur": 26.7,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-B": {
+  "dur": 26.2,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-C": {
+  "dur": 30.6,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-02": {
+  "dur": 12.3,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-R-canards": {
+  "dur": 26.9,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-R-grenouille": {
+  "dur": 22.6,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-Q": {
+  "dur": 26.1,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-C-rose": {
+  "dur": 23.1,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-C-blanc": {
+  "dur": 28.3,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-C-jaune": {
+  "dur": 20.1,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-AU-canards": {
+  "dur": 12.1,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-AU-grenouille": {
+  "dur": 12.3,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-FIN": {
+  "dur": 35.8,
+  "amb": null,
+  "ambAt": [
+   {
+    "at": 12.68,
+    "amb": "soir"
+   }
+  ]
+ },
+ "E3-01": {
+  "dur": 23.7,
+  "amb": "nuit",
+  "ambAt": []
+ },
+ "E3-SAC-rouge": {
+  "dur": 12.6,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-SAC-bleu": {
+  "dur": 12.0,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-SAC-jaune": {
+  "dur": 12.3,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-SAC-vert": {
+  "dur": 12.0,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-02": {
+  "dur": 34.2,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-G1": {
+  "dur": 59.5,
+  "amb": null,
+  "ambAt": [
+   {
+    "at": 4.39,
+    "amb": "grotte"
+   }
+  ]
+ },
+ "E3-G-chat": {
+  "dur": 27.3,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-G-vache": {
+  "dur": 28.6,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-G-coq": {
+  "dur": 27.7,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-G-FIN": {
+  "dur": 32.2,
+  "amb": null,
+  "ambAt": [
+   {
+    "at": 31.77,
+    "amb": "nuit"
+   }
+  ]
+ },
+ "E3-H1": {
+  "dur": 39.7,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-H-lune": {
+  "dur": 12.0,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-H-chat": {
+  "dur": 12.0,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-H-lampe": {
+  "dur": 16.9,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-H-FIN": {
+  "dur": 21.5,
+  "amb": null,
+  "ambAt": []
+ },
+ "E3-FIN": {
+  "dur": 23.6,
+  "amb": null,
+  "ambAt": []
+ },
+ "F-01": {
+  "dur": 39.2,
+  "amb": "feerique",
+  "ambAt": []
+ },
+ "F-SAC-rouge": {
+  "dur": 15.6,
+  "amb": null,
+  "ambAt": []
+ },
+ "F-SAC-bleu": {
+  "dur": 15.3,
+  "amb": null,
+  "ambAt": []
+ },
+ "F-SAC-jaune": {
+  "dur": 15.5,
+  "amb": null,
+  "ambAt": []
+ },
+ "F-SAC-vert": {
+  "dur": 16.0,
+  "amb": null,
+  "ambAt": []
+ },
+ "F-R-compagnon-lapin": {
+  "dur": 24.0,
+  "amb": null,
+  "ambAt": []
+ },
+ "F-R-compagnon-herisson": {
+  "dur": 26.4,
+  "amb": null,
+  "ambAt": []
+ },
+ "F-R-voeu": {
+  "dur": 28.8,
+  "amb": null,
+  "ambAt": []
+ },
+ "F-R-reve": {
+  "dur": 17.3,
+  "amb": null,
+  "ambAt": []
+ },
+ "F-FIN": {
+  "dur": 35.7,
+  "amb": "berceuse",
+  "ambAt": []
+ }
+}

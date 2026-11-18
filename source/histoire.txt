@@ -1,0 +1,320 @@
+# Les trois étoiles de la fée Lumina — texte source des clips audio
+#
+# Syntaxe :
+#   === ID            début d'un clip (le nom du fichier MP3 sera ID.mp3)
+#   @amb nom          ambiance en boucle lancée par l'appli au début du clip (stop = arrêt en fondu)
+#   L: texte          ligne dite par Lumina (sinon : narrateur)
+#   {bruitage}        bruitage inséré à cet endroit ({croc x3} = répété 3 fois)
+#   {pause} {pause 5} silence de 2 s (ou du nombre de secondes indiqué)
+#   {@amb nom}        changement d'ambiance au milieu du clip (l'appli le fait au bon moment)
+#   Chaque ligne = un paragraphe (petite respiration entre les lignes).
+#   Les choix et tirages au sort sont décrits dans docs/scenario.json.
+
+=== P01
+@amb accueil
+Bonsoir ! Tu es bien au chaud ? Alors ouvre grand tes oreilles…
+Aujourd'hui, on va vivre une aventure. Et dans cette aventure, le héros ou l'héroïne… ce n'est pas un prince, ni une princesse. Ce n'est pas un roi, ni une reine. Non… le héros ou l'héroïne de cette histoire… c'est TOI !
+Pendant l'histoire, tu vas devoir faire des choix. Écoute bien. Quand tu entends ce petit bruit-là…
+{carillon}
+… c'est que c'est à toi de décider ! Tu dis ta réponse bien fort à papa ou maman, et hop, l'histoire continue.
+Et tu sais quoi ? Il n'y a pas de mauvaise réponse. Toutes les réponses mènent à l'aventure !
+
+=== P02
+On essaie ? Pour partir à l'aventure, il te faut un sac à dos magique. {scintillement} De quelle couleur est-il ? Rouge ? Bleu ? Jaune ? Ou vert ?
+Dis ta couleur à papa ou maman !
+{carillon}
+
+=== P03-rouge
+{ding} Rouge ! Rouge comme une fraise bien mûre. Quel joli sac !
+
+=== P03-bleu
+{ding} Bleu ! Bleu comme le ciel quand il fait beau. Quel joli sac !
+
+=== P03-jaune
+{ding} Jaune ! Jaune comme le soleil. Quel joli sac !
+
+=== P03-vert
+{ding} Vert ! Vert comme une petite grenouille. Quel joli sac !
+
+=== P04
+Bravo, tu as compris le jeu ! Mets ton sac sur ton dos… {zip} voilà.
+{@amb stop}
+Maintenant, chut… {pause} Écoute… {voix_lointaine} Tu entends ? Quelqu'un t'appelle…
+
+=== P05
+{fee_long}
+L: Coucou… C'est moi, Lumina, la fée des rêves. J'ai besoin de ton aide ! Cette nuit, {vent} un grand coup de vent a soufflé dans le ciel, et mes trois étoiles magiques sont tombées dans la forêt. Sans elles, je ne peux plus envoyer de jolis rêves aux enfants… Est-ce que tu veux bien m'aider à les retrouver ?
+{pause}
+L: Oh, merci ! Je savais que je pouvais compter sur toi.
+Alors… en route pour la forêt enchantée !
+
+=== E1-01
+@amb foret
+Te voilà à l'entrée de la forêt enchantée. Les arbres sont si grands qu'ils chatouillent les nuages. {bruissement} Les feuilles font chhh… chhh… comme si elles se racontaient des secrets.
+{pas_feuilles} Tu marches, tu marches… et soudain, le chemin se sépare en deux.
+D'un côté, un chemin plein de fleurs de toutes les couleurs, qui sentent bon comme un bouquet.
+De l'autre, un chemin de petites pierres qui brillent, qui brillent, comme des bonbons de lumière.
+Quel chemin choisis-tu ? Les fleurs ? Ou les pierres brillantes ?
+{carillon}
+
+=== E1-A
+Le chemin des fleurs ! Tu marches au milieu des tulipes, des marguerites et des coquelicots. {abeille} Une abeille passe devant ton nez : bzzz… bzzz… Elle te fait un petit coucou avec ses ailes.
+Les fleurs sont si hautes qu'elles te chatouillent les genoux. Hi hi !
+Et puis, au bout du chemin, derrière un gros buisson… {buisson} quelque chose bouge.
+
+=== E1-B
+Le chemin des pierres brillantes ! {tintements_cristallins} À chaque pas, les pierres font tic, tic, tic sous tes pieds, et elles s'allument : une rouge, une bleue, une dorée… Comme si tu marchais sur un arc-en-ciel !
+Tu sautes d'une pierre à l'autre : hop, hop, hop !
+Et puis, au bout du chemin, derrière un gros buisson… {buisson} quelque chose bouge.
+
+=== E1-R-lapin
+Qui est là ? … C'est un petit lapin blanc, avec de grandes oreilles toutes douces ! Mais il a l'air tout triste. Il te dit tout doucement : « J'ai tellement faim… Tu n'aurais pas des carottes ? »
+{zip} Tu ouvres ton sac à dos magique… {scintillement} et dedans, il y a des carottes !
+Combien de carottes veux-tu donner au petit lapin ? Une, deux, trois, quatre ou cinq ?
+{carillon}
+
+=== E1-R-herisson
+Qui est là ? … C'est un petit hérisson tout rond, avec ses piquants et son petit nez noir qui renifle : {reniflement} snif, snif. Mais il a l'air tout triste. Il te dit tout doucement : « J'ai tellement faim… Tu n'aurais pas des pommes ? »
+{zip} Tu ouvres ton sac à dos magique… {scintillement} et dedans, il y a des pommes !
+Combien de pommes veux-tu donner au petit hérisson ? Une, deux, trois, quatre ou cinq ?
+{carillon}
+
+=== E1-N1
+Une ! Une seule, mais une toute belle. Il la croque : {croc} crunch ! Miam, qu'elle est bonne !
+
+=== E1-N2
+Deux ! Une pour tout de suite, une pour plus tard. {croc x2} Crunch, crunch !
+
+=== E1-N3
+Trois ! Une, deux, trois… {croc x3} Crunch, crunch, crunch ! Il se lèche les babines.
+
+=== E1-N4
+Quatre ! Oh là là, quel festin ! {croc x4} Crunch, crunch, crunch, crunch !
+
+=== E1-N5
+Cinq ! Une pour chaque doigt de ta main ! {croc x5} Crunch, crunch, crunch, crunch, crunch ! Son petit ventre est tout rond.
+
+=== E1-E-lapin
+Le petit lapin saute de joie : {boing x3} boing, boing, boing ! « Merci ! Pour te remercier, je vais te montrer un secret. »
+Il gratte la terre avec ses pattes… {grattement} gratte, gratte, gratte… Et là, au fond d'un petit trou… quelque chose brille.
+{jingle_etoile} C'est… la première étoile de Lumina !
+
+=== E1-E-herisson
+Le petit hérisson est si content qu'il se roule en boule et {roulade} roule, roule, roule dans les feuilles mortes…
+Et quand il se déroule… regarde ! Quelque chose de brillant est resté accroché à ses piquants.
+{jingle_etoile} C'est… la première étoile de Lumina !
+
+=== E1-FIN
+Tu la prends tout doucement. Elle est toute chaude, comme un petit câlin. {zip} Tu la ranges bien au fond de ton sac à dos magique.
+{fee_court}
+L: Bravo ! Tu as trouvé ma première étoile ! Plus que deux… Continue ! Je crois entendre de l'eau qui coule, un peu plus loin…
+{ruisseau_loin}
+
+=== E2-01
+@amb riviere
+Tu suis le petit bruit de l'eau… glou, glou, glou… et te voilà au bord d'une jolie rivière. L'eau est si claire que tu peux voir les cailloux tout au fond. {oiseau} Un petit oiseau chante sur une branche.
+Mais pour continuer l'aventure, il faut passer de l'autre côté ! Comment vas-tu traverser ?
+Tu peux prendre le vieux pont en bois.
+Tu peux monter sur une grande feuille, qui flotte comme un bateau.
+Ou tu peux sauter sur les gros cailloux, un par un.
+Alors : le pont ? La feuille-bateau ? Ou les cailloux ?
+{carillon}
+
+=== E2-A
+Le vieux pont en bois ! Tu poses un pied… {grincement} Criiic ! Le pont fait un drôle de bruit, comme s'il bâillait. Il est très vieux, mais très solide.
+Tu avances doucement : criiic… craaac… criiic… Et en dessous, regarde ! Des petits poissons argentés jouent à cache-cache entre les cailloux.
+Encore quelques pas… et voilà, tu es de l'autre côté !
+
+=== E2-B
+La feuille-bateau ! Tu montes dessus, tout doucement… Elle bouge un peu, mais elle te porte comme un vrai petit bateau. {clapotis} Flic, floc, flic, floc… La rivière te pousse gentiment.
+Tu glisses sur l'eau, le vent te caresse les cheveux… Quel beau voyage !
+Et la feuille vient se poser tout en douceur sur l'autre rive. Tu sautes à terre : hop !
+
+=== E2-C
+Les gros cailloux ! Tu prends ton élan… et hop ! Un caillou. Hop ! Deux cailloux. Hop ! Trois cailloux…
+Oh ! Le quatrième caillou est tout glissant… {plouf} Plouf ! Ton pied touche l'eau. Elle est toute fraîche ! Hi hi, ça chatouille !
+Allez, encore un saut… hop ! Et te voilà de l'autre côté, avec juste un petit pied mouillé.
+
+=== E2-02
+De ce côté-là de la rivière, il y a une petite mare toute calme, toute ronde. Sur l'eau flottent de grandes feuilles vertes : ce sont des nénuphars.
+Et au bord de la mare… tu entends quelqu'un…
+
+=== E2-R-canards
+{canards} Coin, coin ! Coin, coin ! C'est une famille de canards ! La maman cane devant, et derrière elle, un, deux, trois petits canetons tout jaunes, en file indienne.
+La maman cane te dit : « Bonjour ! Tu cherches quelque chose ? Cette nuit, j'ai vu tomber une lumière du ciel… plouf, dans notre mare ! Elle s'est cachée sous un nénuphar. »
+
+=== E2-R-grenouille
+{grenouille} Croâ, croâ ! C'est une petite grenouille verte, assise sur une pierre. Elle a de gros yeux tout ronds qui te regardent avec curiosité.
+Elle te dit : « Bonjour ! Tu cherches quelque chose ? Cette nuit, j'ai vu tomber une lumière du ciel… plouf, dans ma mare ! Elle s'est cachée sous un nénuphar. »
+
+=== E2-Q
+Une étoile de Lumina ! Mais sous quel nénuphar ? Regarde bien : sur chacun, il y a une fleur.
+Un nénuphar avec une fleur rose. Un nénuphar avec une fleur blanche. Et un nénuphar avec une fleur jaune.
+Sous lequel veux-tu regarder ? Le rose ? Le blanc ? Ou le jaune ?
+{carillon}
+
+=== E2-C-rose
+Tu soulèves doucement le nénuphar à la fleur rose… {bulles} Blop, blop, blop ! Un petit poisson rouge sort la tête et te fait des bulles, comme des bisous !
+Et dans la plus grosse bulle… quelque chose brille. La bulle monte, monte… et pop ! {pop} Elle éclate juste dans tes mains.
+{jingle_etoile} C'est… la deuxième étoile de Lumina !
+
+=== E2-C-blanc
+Tu soulèves doucement le nénuphar à la fleur blanche… Chut ! Une toute petite tortue dort dessous. Elle ronfle : rrr… pschhh… rrr… pschhh…
+Et devine ce qui lui sert d'oreiller ? Quelque chose qui brille ! La petite tortue ouvre un œil, bâille… et te le donne avec un sourire tout endormi.
+{jingle_etoile} C'est… la deuxième étoile de Lumina !
+
+=== E2-C-jaune
+Tu soulèves doucement le nénuphar à la fleur jaune… et oh ! De la lumière s'échappe et fait des ronds tout dorés sur l'eau. {carillon_leger} Des libellules arrivent et dansent au-dessus des ronds de lumière.
+Au milieu, posée sur l'eau comme sur un coussin… quelque chose brille.
+{jingle_etoile} C'est… la deuxième étoile de Lumina !
+
+=== E2-AU-canards
+La maman cane et ses canetons battent des ailes de joie : {canards} coin, coin, coin ! Les trois petits canetons font la ronde autour de toi. Au revoir, les canards !
+
+=== E2-AU-grenouille
+La petite grenouille saute de joie : hop, hop, hop ! {grenouille} Croâ, croâ ! Elle saute si haut qu'elle touche presque les nuages. Au revoir, petite grenouille !
+
+=== E2-FIN
+{zip} Tu ranges la deuxième étoile dans ton sac à dos magique, tout contre la première. Et là… {tintement} ding ! Les deux étoiles se touchent et font une jolie musique.
+{@amb soir}
+Le soleil commence à se coucher. Le ciel devient tout orange, puis tout rose…
+{fee_court}
+L: Bravo ! Déjà deux étoiles ! Il n'en reste plus qu'une… La dernière est tombée tout en haut de la colline. Il commence à faire nuit, mais n'aie pas peur : tes étoiles vont t'éclairer le chemin.
+
+=== E3-01
+@amb nuit
+Tu arrives au pied d'une grande colline. La nuit est tombée. Dans le ciel, la lune est toute ronde, et on entend les grillons qui chantent : cri-cri… cri-cri…
+Il fait un peu sombre. Mais tu sais quoi ? Tu as quelque chose de magique avec toi… Ton sac à dos ! Regarde… {scintillement} il commence à briller…
+
+=== E3-SAC-rouge
+Il brille d'une belle lumière rouge, toute douce, comme une fraise qui ferait de la lumière ! Autour de toi, l'herbe et les arbres deviennent tout rouges. Maintenant, tu y vois très bien.
+
+=== E3-SAC-bleu
+Il brille d'une belle lumière bleue, toute douce, comme un petit morceau de ciel ! Autour de toi, l'herbe et les arbres deviennent tout bleus. Maintenant, tu y vois très bien.
+
+=== E3-SAC-jaune
+Il brille d'une belle lumière jaune, toute douce, comme un petit soleil de poche ! Autour de toi, l'herbe et les arbres deviennent tout dorés. Maintenant, tu y vois très bien.
+
+=== E3-SAC-vert
+Il brille d'une belle lumière verte, toute douce, comme une grosse luciole ! Autour de toi, l'herbe et les arbres deviennent tout verts. Maintenant, tu y vois très bien.
+
+=== E3-02
+Avec ta lumière magique, tu montes, tu montes la colline… {pas_herbe} Tout en haut, il y a deux endroits.
+D'un côté, une petite grotte… et dedans, on voit plein de minuscules points qui scintillent.
+De l'autre côté, un très, très grand arbre… et dans ses branches, deux gros yeux ronds qui clignent : {hibou} hou-hou !
+La dernière étoile est forcément là, quelque part… Où veux-tu aller ? Dans la grotte qui scintille ? Ou vers le grand arbre aux gros yeux ?
+{carillon}
+
+=== E3-G1
+La grotte qui scintille ! Tu entres tout doucement…
+{@amb grotte}
+{gouttes} Ploc… ploc… Des petites gouttes tombent du plafond. Et quand tu parles, ta voix fait un écho rigolo.
+Les petits points qui scintillent… ce sont des lucioles ! Mais elles sont presque toutes endormies, et leur lumière est toute faible.
+Une petite luciole s'approche en bâillant : « Bonsoir… L'étoile de Lumina est tombée dans notre grotte. Mais elle était si fatiguée après son grand voyage qu'elle s'est endormie… et quand une étoile dort, elle ne brille plus du tout ! Pour la réveiller, il faut beaucoup, beaucoup de lumière : la lumière de toutes les lucioles ! Seulement… nous aussi, on dort à moitié. Alors pour nous réveiller… il faut faire un cri d'animal, très fort ! »
+Quel cri d'animal veux-tu faire ? Le chat ? La vache ? Ou le coq ?
+{carillon}
+
+=== E3-G-chat
+Le chat ! Attention… à trois, tu fais le chat. Un… deux… trois ! {miaou} Miaouuuuu !
+{pause}
+Encore plus fort !
+{pause}
+{reveil_lucioles} Les lucioles ouvrent les yeux… une, puis dix, puis cent ! Elles rigolent : « Un chat dans notre grotte ? Hi hi hi ! » Et elles s'allument toutes en même temps !
+
+=== E3-G-vache
+La vache ! Attention… à trois, tu fais la vache. Un… deux… trois ! {meuh} Meuuuuuh !
+{pause}
+Encore plus fort !
+{pause}
+{reveil_lucioles} Avec l'écho de la grotte, ça fait : meuh… meuh… meuh… Les lucioles ouvrent les yeux… une, puis dix, puis cent ! Et elles s'allument toutes en même temps !
+
+=== E3-G-coq
+Le coq ! Attention… à trois, tu fais le coq. Un… deux… trois ! {cocorico} Cocoricoooo !
+{pause}
+Encore plus fort !
+{pause}
+{reveil_lucioles} Les lucioles ouvrent les yeux… une, puis dix, puis cent ! « C'est déjà le matin ? » demandent-elles, toutes surprises. Et elles s'allument toutes en même temps !
+
+=== E3-G-FIN
+La grotte est toute illuminée, comme un ciel plein d'étoiles. Puis les lucioles s'envolent toutes ensemble vers le fond de la grotte… et se posent autour d'un petit caillou tout gris.
+Elles brillent, elles brillent, elles brillent… Et le petit caillou gris ouvre un œil… bâille… et se met à briller plus fort que tout le reste ! Ce n'était pas un caillou !
+{jingle_etoile} C'est… la troisième étoile de Lumina !
+Les lucioles volent autour de toi pour te dire merci, et elles t'accompagnent jusqu'à la sortie de la grotte.
+{@amb nuit}
+
+=== E3-H1
+Le grand arbre ! Tu t'approches… Les gros yeux ronds clignent encore : {hibou} hou-hou !
+C'est un hibou ! Un vieux hibou très sage, avec des plumes toutes douces et des petites lunettes rondes sur le bec.
+« Bonsoir, toi qui voyages dans la nuit… Je garde la dernière étoile dans mon nid. Je te la donnerai avec plaisir… si tu réponds à ma devinette ! »
+Le hibou réfléchit… hmmm… « Dis-moi : qu'est-ce qui brille dans la nuit ? »
+Est-ce que c'est… la lune ? Les yeux du chat ? Ou une lampe de poche ?
+{carillon}
+
+=== E3-H-lune
+La lune ! {hibou_joyeux} « Hou-hou ! Bravo ! La lune brille toute la nuit, comme une grosse veilleuse dans le ciel. Quelle bonne réponse ! »
+
+=== E3-H-chat
+Les yeux du chat ! {hibou_joyeux} « Hou-hou ! Bravo ! Les yeux du chat brillent dans le noir, comme deux petites billes. Quelle bonne réponse ! »
+
+=== E3-H-lampe
+La lampe de poche ! {hibou_joyeux} « Hou-hou ! Bravo ! Une lampe de poche, ça brille très fort ! Moi aussi, j'aimerais bien en avoir une, pour lire mes livres la nuit… Quelle bonne réponse ! »
+
+=== E3-H-FIN
+Le hibou ouvre grand ses ailes… {ailes} et s'envole jusqu'à son nid, tout en haut de l'arbre. Puis il redescend tout doucement… et dans ses pattes, quelque chose brille.
+« Et tu sais quoi ? Il y a encore une chose qui brille dans la nuit… c'est elle ! »
+{jingle_etoile} C'est… la troisième étoile de Lumina !
+
+=== E3-FIN
+Tu ranges la troisième étoile dans ton sac à dos magique… {zip} Et là… {tintement3} ding, ding, ding ! Les trois étoiles se touchent, et ton sac se met à briller de plus en plus fort…
+Bravo ! Tu as retrouvé les trois étoiles !
+{fee_long} Et devant toi, dans une pluie de paillettes… quelqu'un apparaît.
+
+=== F-01
+@amb feerique
+C'est Lumina ! Elle est toute petite, avec des ailes qui brillent comme des bulles de savon.
+L: Tu as réussi ! Tu as retrouvé mes trois étoiles ! Merci, merci, merci !
+Tu ouvres ton sac à dos… {zip} et les trois étoiles s'envolent. Elles montent, montent, montent… {envol} jusque tout là-haut, dans le ciel. Et le ciel se rallume ! {jingle_etoile} Partout, les étoiles se mettent à briller.
+L: Grâce à toi, cette nuit, tous les enfants vont faire de jolis rêves. Et toi… tu mérites une récompense.
+
+=== F-SAC-rouge
+L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière rouge, rouge comme une fraise. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
+
+=== F-SAC-bleu
+L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière bleue, bleue comme le ciel. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
+
+=== F-SAC-jaune
+L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière jaune, jaune comme le soleil. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
+
+=== F-SAC-vert
+L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière verte, verte comme une petite grenouille. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
+
+=== F-R-compagnon-lapin
+L: Et puis… quelqu'un voudrait te dire bonne nuit.
+{boing x2} Boing, boing ! C'est le petit lapin blanc ! Celui à qui tu as donné des carottes.
+L: Pour cette nuit, il sera ton compagnon de rêve. Quand tu fermeras les yeux, il viendra jouer avec toi dans tes rêves.
+Le petit lapin te fait un gros câlin, tout doux, tout chaud.
+
+=== F-R-compagnon-herisson
+L: Et puis… quelqu'un voudrait te dire bonne nuit.
+{reniflement} Snif, snif ! C'est le petit hérisson ! Celui à qui tu as donné des pommes.
+L: Pour cette nuit, il sera ton compagnon de rêve. Quand tu fermeras les yeux, il viendra jouer avec toi dans tes rêves.
+Le petit hérisson te fait un gros câlin… attention, ça pique un tout petit peu ! Hi hi !
+
+=== F-R-voeu
+L: Et puis… je t'offre un vœu. Un vœu rien qu'à toi. Ferme les yeux… pense très fort à quelque chose qui te rend heureux ou heureuse… et dis-le tout bas à papa ou maman.
+{pause 5}
+{scintillement}
+L: C'est fait ! J'ai rangé ton vœu dans une petite étoile, tout là-haut. Cette nuit, elle va le garder bien au chaud, et veiller dessus.
+
+=== F-R-reve
+L: Et puis… cette nuit, je vais t'envoyer un rêve spécial. Un rêve où tu voles au-dessus de la forêt enchantée, avec tous les amis que tu as rencontrés aujourd'hui. Tu verras la rivière qui brille, la colline, et toutes les étoiles du ciel qui te font coucou.
+
+=== F-FIN
+@amb berceuse
+L: Maintenant, c'est l'heure de dormir. Merci pour ton aide… Bonne nuit !
+{fee_depart} Et Lumina s'envole, tout doucement, vers les étoiles.
+Ce soir, le héros ou l'héroïne de cette histoire… c'était toi.
+Pose ta tête sur l'oreiller… ferme les yeux… respire tout doucement…
+Et si un jour tu as envie de revenir dans la forêt enchantée, Lumina sera là. Et tu sais quoi ? L'aventure ne sera jamais tout à fait la même…
+Bonne nuit…
+{jingle_etoile_doux}

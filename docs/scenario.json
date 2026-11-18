@@ -1,0 +1,72 @@
+{
+ "title": "Les trois étoiles de la fée Lumina",
+ "start": "P01",
+ "nodes": {
+  "P01": {"scene": "accueil", "play": "P01", "next": "P02"},
+  "P02": {"play": "P02", "choice": {"question": "De quelle couleur est le sac à dos ?", "var": "couleur", "options": [
+    {"label": "Rouge", "icon": "🎒", "bg": "#e53935", "value": "rouge"},
+    {"label": "Bleu", "icon": "🎒", "bg": "#1e88e5", "value": "bleu"},
+    {"label": "Jaune", "icon": "🎒", "bg": "#fdd835", "fg": "#333", "value": "jaune"},
+    {"label": "Vert", "icon": "🎒", "bg": "#43a047", "value": "vert"}], "next": "P03"}},
+  "P03": {"play": "P03-{couleur}", "next": "P04"},
+  "P04": {"play": "P04", "next": "P05"},
+  "P05": {"play": "P05", "next": "E1-01"},
+
+  "E1-01": {"scene": "foret", "play": "E1-01", "choice": {"question": "Quel chemin ?", "options": [
+    {"label": "Les fleurs", "icon": "🌸", "next": "E1-A"},
+    {"label": "Les pierres brillantes", "icon": "💎", "next": "E1-B"}]}},
+  "E1-A": {"play": "E1-A", "next": "E1-R"},
+  "E1-B": {"play": "E1-B", "next": "E1-R"},
+  "E1-R": {"random": [{"animal": "lapin", "fruit": "🥕", "fruits": "carottes"}, {"animal": "herisson", "fruit": "🍎", "fruits": "pommes"}],
+    "play": "E1-R-{animal}", "choice": {"question": "Combien de {fruits} ?", "var": "nombre", "grid": 5, "options": [
+    {"label": "1", "icon": "{fruit}", "value": "1"},
+    {"label": "2", "icon": "{fruit}{fruit}", "value": "2"},
+    {"label": "3", "icon": "{fruit}{fruit}{fruit}", "value": "3"},
+    {"label": "4", "icon": "{fruit}{fruit}{fruit}{fruit}", "value": "4"},
+    {"label": "5", "icon": "{fruit}{fruit}{fruit}{fruit}{fruit}", "value": "5"}], "next": "E1-N"}},
+  "E1-N": {"play": "E1-N{nombre}", "next": "E1-E"},
+  "E1-E": {"play": "E1-E-{animal}", "star": 1, "next": "E1-FIN"},
+  "E1-FIN": {"play": "E1-FIN", "next": "E2-01"},
+
+  "E2-01": {"scene": "riviere", "play": "E2-01", "choice": {"question": "Comment traverser la rivière ?", "options": [
+    {"label": "Le pont", "icon": "🌉", "next": "E2-A"},
+    {"label": "La feuille-bateau", "icon": "🍃", "next": "E2-B"},
+    {"label": "Les cailloux", "icon": "🪨", "next": "E2-C"}]}},
+  "E2-A": {"play": "E2-A", "next": "E2-02"},
+  "E2-B": {"play": "E2-B", "next": "E2-02"},
+  "E2-C": {"play": "E2-C", "next": "E2-02"},
+  "E2-02": {"play": "E2-02", "next": "E2-R"},
+  "E2-R": {"random": [{"ami": "canards"}, {"ami": "grenouille"}], "play": "E2-R-{ami}", "next": "E2-Q"},
+  "E2-Q": {"play": "E2-Q", "choice": {"question": "Sous quel nénuphar ?", "var": "fleur", "options": [
+    {"label": "Rose", "icon": "🌸", "bg": "#ec407a", "value": "rose"},
+    {"label": "Blanc", "icon": "🤍", "bg": "#eceff1", "fg": "#333", "value": "blanc"},
+    {"label": "Jaune", "icon": "🌼", "bg": "#fdd835", "fg": "#333", "value": "jaune"}], "next": "E2-S"}},
+  "E2-S": {"play": "E2-C-{fleur}", "star": 2, "next": "E2-AU"},
+  "E2-AU": {"play": "E2-AU-{ami}", "next": "E2-FIN"},
+  "E2-FIN": {"play": "E2-FIN", "next": "E3-01"},
+
+  "E3-01": {"scene": "nuit", "play": "E3-01", "next": "E3-SAC"},
+  "E3-SAC": {"play": "E3-SAC-{couleur}", "next": "E3-02"},
+  "E3-02": {"play": "E3-02", "choice": {"question": "Où aller ?", "options": [
+    {"label": "La grotte qui scintille", "icon": "✨", "next": "E3-G1"},
+    {"label": "Le grand arbre", "icon": "🌳", "next": "E3-H1"}]}},
+  "E3-G1": {"scene": "grotte", "play": "E3-G1", "choice": {"question": "Quel cri d'animal ? (l'enfant le fait aussi !)", "var": "cri", "options": [
+    {"label": "Le chat", "icon": "🐱", "value": "chat"},
+    {"label": "La vache", "icon": "🐮", "value": "vache"},
+    {"label": "Le coq", "icon": "🐓", "value": "coq"}], "next": "E3-G"}},
+  "E3-G": {"play": "E3-G-{cri}", "next": "E3-G-FIN"},
+  "E3-G-FIN": {"play": "E3-G-FIN", "star": 3, "next": "E3-FIN"},
+  "E3-H1": {"play": "E3-H1", "choice": {"question": "Qu'est-ce qui brille dans la nuit ?", "var": "brille", "options": [
+    {"label": "La lune", "icon": "🌙", "value": "lune"},
+    {"label": "Les yeux du chat", "icon": "🐱", "value": "chat"},
+    {"label": "La lampe de poche", "icon": "🔦", "value": "lampe"}], "next": "E3-H"}},
+  "E3-H": {"play": "E3-H-{brille}", "next": "E3-H-FIN"},
+  "E3-H-FIN": {"play": "E3-H-FIN", "star": 3, "next": "E3-FIN"},
+  "E3-FIN": {"scene": "nuit", "play": "E3-FIN", "next": "F-01"},
+
+  "F-01": {"scene": "final", "play": "F-01", "next": "F-SAC"},
+  "F-SAC": {"play": "F-SAC-{couleur}", "next": "F-R"},
+  "F-R": {"random": [{"recompense": "compagnon-{animal}"}, {"recompense": "voeu"}, {"recompense": "reve"}], "play": "F-R-{recompense}", "next": "F-FIN"},
+  "F-FIN": {"play": "F-FIN", "end": true}
+ }
+}

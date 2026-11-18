@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les trois étoiles de la fée Lumina</title>
+<meta name="theme-color" content="#1b1640">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+  :root { --txt:#fff8e7; --gold:#ffd54f; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { margin:0; height:100%; font-family: "Nunito", "Segoe UI", system-ui, sans-serif; color:var(--txt); overflow:hidden; }
+  body { background:#1b1640; transition: background 2.5s ease; display:flex; flex-direction:column;
+         padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom); }
+  body.s-accueil { background: radial-gradient(circle at 50% 30%, #3d2f7a, #1b1640 70%); }
+  body.s-foret   { background: linear-gradient(#5fae6b, #1f5a33); }
+  body.s-riviere { background: linear-gradient(#7cc6e8, #2a7a8f 60%, #2f6b3c); }
+  body.s-nuit    { background: linear-gradient(#0d1033, #24205a 70%, #1c3a2a); }
+  body.s-grotte  { background: radial-gradient(circle at 50% 40%, #3a3550, #0d0b14 75%); }
+  body.s-final   { background: radial-gradient(circle at 50% 25%, #5b3e9e, #120e33 75%); }
+  .screen { display:none; flex:1; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:18px; }
+  .screen.on { display:flex; }
+  h1 { font-size: clamp(26px, 7vw, 40px); margin:0; text-shadow:0 2px 8px #0008; line-height:1.15; }
+  p.note { opacity:.85; max-width:420px; font-size:16px; line-height:1.4; margin:0; }
+  button { font:inherit; border:0; cursor:pointer; touch-action:manipulation; }
+  .big { background:var(--gold); color:#2a1d00; font-size:24px; font-weight:800; padding:20px 34px; border-radius:40px;
+         box-shadow:0 6px 0 #c79a1a, 0 10px 20px #0006; }
+  .big:active { transform:translateY(4px); box-shadow:0 2px 0 #c79a1a; }
+  .small { background:#ffffff22; color:var(--txt); padding:10px 16px; border-radius:20px; font-size:15px; }
+  .stars { font-size:46px; letter-spacing:10px; min-height:60px; }
+  .stars span { display:inline-block; opacity:.25; filter:grayscale(1); transition:all .8s; }
+  .stars span.got { opacity:1; filter:none; animation: pop 1s ease; }
+  @keyframes pop { 0%{transform:scale(.3) rotate(-40deg)} 60%{transform:scale(1.5) rotate(10deg)} 100%{transform:scale(1)} }
+  .moon { font-size:110px; animation: float 4s ease-in-out infinite; filter: drop-shadow(0 0 20px #fff6); }
+  @keyframes float { 50% { transform: translateY(-12px); } }
+  #scene-title { font-size:20px; opacity:.9; min-height:26px; }
+  .bar { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  #question { font-size: clamp(20px, 5.5vw, 28px); font-weight:800; text-shadow:0 2px 6px #0008; max-width:520px; }
+  #options { display:grid; gap:14px; width:100%; max-width:560px; grid-template-columns: 1fr 1fr; }
+  #options.n3 { grid-template-columns: 1fr; }
+  #options.n5 { grid-template-columns: 1fr; gap:10px; }
+  .opt { background:#fffdf5; color:#2b2340; border-radius:24px; padding:16px 10px; min-height:96px; display:flex; flex-direction:column;
+         align-items:center; justify-content:center; gap:4px; box-shadow:0 6px 0 #0003, 0 10px 18px #0004; font-weight:800; font-size:20px;
+         animation: appear .5s ease backwards; }
+  #options.n3 .opt, #options.n5 .opt { flex-direction:row; gap:14px; min-height:74px; justify-content:flex-start; padding-left:22px; }
+  .opt .ic { font-size:44px; line-height:1; }
+  #options.n5 .opt .ic { font-size:30px; }
+  #options.n5 .opt span:last-child { font-size:30px; margin-left:auto; padding-right:18px; }
+  .opt:active { transform: translateY(4px) scale(.98); }
+  @keyframes appear { from { opacity:0; transform: translateY(20px) scale(.9); } }
+  #loading { width:220px; height:10px; background:#ffffff22; border-radius:6px; overflow:hidden; }
+  #loading i { display:block; height:100%; width:0; background:var(--gold); transition:width .2s; }
+  .hint { font-size:14px; opacity:.7; }
+  #vol { width:160px; accent-color: var(--gold); }
+  .twinkle { position:fixed; inset:0; pointer-events:none; z-index:-1; }
+</style>
+</head>
+<body class="s-accueil">
+<canvas class="twinkle" id="sky"></canvas>
+
+<section class="screen on" id="s-start">
+  <div class="moon">🌙</div>
+  <h1>Les trois étoiles<br>de la fée Lumina</h1>
+  <p class="note">Une histoire à écouter dont l'enfant est le héros ou l'héroïne.<br>
+    Au son du carillon, l'enfant dit sa réponse à voix haute&nbsp;: <b>vous touchez le bouton</b> correspondant.</p>
+  <div id="loading"><i></i></div>
+  <button class="big" id="btn-start" disabled>Chargement…</button>
+  <p class="hint">≈ 12 minutes · mettez le son 🔊</p>
+</section>
+
+<section class="screen" id="s-play">
+  <div class="stars" id="stars"><span>⭐</span><span>⭐</span><span>⭐</span></div>
+  <div class="moon" id="scene-icon">🌙</div>
+  <div id="scene-title"></div>
+  <div class="bar">
+    <button class="small" id="btn-pause">⏸ Pause</button>
+  </div>
+</section>
+
+<section class="screen" id="s-choice">
+  <div class="stars" id="stars2"></div>
+  <div id="question"></div>
+  <div id="options"></div>
+  <div class="bar"><button class="small" id="btn-replay">🔁 Réécouter</button></div>
+</section>
+
+<section class="screen" id="s-end">
+  <div class="moon">🌟</div>
+  <h1>Bonne nuit…</h1>
+  <p class="note">L'aventure ne sera jamais tout à fait la même :<br>la prochaine fois, d'autres surprises attendent !</p>
+  <button class="big" id="btn-again">✨ Une nouvelle aventure</button>
+</section>
+
+<div class="bar" style="padding:10px 0 14px; opacity:.8">
+  <label class="hint">Fond sonore <input type="range" id="vol" min="0" max="1" step="0.05" value="0.6"></label>
+  <button class="small" id="btn-restart" style="display:none">⟲ Recommencer</button>
+</div>
+
+<script>
+'use strict';
+const SCENES = {
+  accueil: { icon: '🌙', title: '' },
+  foret:   { icon: '🌳', title: 'La forêt enchantée' },
+  riviere: { icon: '🦆', title: 'La rivière' },
+  nuit:    { icon: '🌕', title: 'La colline de la nuit' },
+  grotte:  { icon: '✨', title: 'La grotte des lucioles' },
+  final:   { icon: '🧚', title: 'Lumina' },
+};
+const $ = s => document.querySelector(s);
+let SC, META, ctx, master, ambBus, voiceBus, waitBus;
+const raw = {};            // ArrayBuffer compressés (tout est préchargé)
+const decoded = new Map(); // AudioBuffer décodés (petit cache)
+let vars = {}, stars = 0, node = null, voiceSrc = null, clipT0 = 0, ambTimer = null, pendingAmb = [];
+let amb = { name: null, src: null, gain: null }, wait = { src: null, gain: null };
+let wakeLock = null, paused = false;
+
+// ---------- chargement ----------
+async function boot() {
+  [SC, META] = await Promise.all([fetch('scenario.json').then(r => r.json()), fetch('clips.json').then(r => r.json())]);
+  const files = Object.keys(META).map(id => 'audio/clips/' + id + '.mp3')
+    .concat(['accueil', 'foret', 'riviere', 'soir', 'nuit', 'grotte', 'feerique', 'berceuse', 'attente'].map(a => 'audio/amb/' + a + '.mp3'));
+  let done = 0;
+  const bar = $('#loading i');
+  // on charge d'abord le début, puis le reste en parallèle par petits paquets
+  const queue = files.slice();
+  async function worker() {
+    while (queue.length) {
+      const f = queue.shift();
+      for (let k = 0; k < 3; k++) {
+        try { raw[f] = await fetch(f).then(r => { if (!r.ok) throw r.status; return r.arrayBuffer(); }); break; }
+        catch (e) { await new Promise(r => setTimeout(r, 800)); }
+      }
+      done++; bar.style.width = (100 * done / files.length) + '%';
+      if (raw['audio/clips/P01.mp3'] && raw['audio/amb/accueil.mp3'] && raw['audio/clips/P02.mp3']) enableStart();
+    }
+  }
+  await Promise.all([worker(), worker(), worker(), worker()]);
+  $('#loading').style.visibility = 'hidden';
+}
+function enableStart() { const b = $('#btn-start'); if (b.disabled) { b.disabled = false; b.textContent = '▶ Commencer'; } }
+
+async function buffer(path) {
+  if (decoded.has(path)) return decoded.get(path);
+  while (!raw[path]) await new Promise(r => setTimeout(r, 150));
+  const b = await ctx.decodeAudioData(raw[path].slice(0));
+  decoded.set(path, b);
+  if (decoded.size > 14) decoded.delete(decoded.keys().next().value);
+  return b;
+}
+
+// ---------- audio ----------
+function initAudio() {
+  ctx = new (window.AudioContext || window.webkitAudioContext)();
+  master = ctx.createGain(); master.connect(ctx.destination);
+  voiceBus = ctx.createGain(); voiceBus.connect(master);
+  ambBus = ctx.createGain(); ambBus.gain.value = +$('#vol').value; ambBus.connect(master);
+  waitBus = ctx.createGain(); waitBus.gain.value = 0.7; waitBus.connect(ambBus);
+}
+function fadeOut(g, src, t = 2) {
+  if (!g) return;
+  const now = ctx.currentTime;
+  g.gain.cancelScheduledValues(now); g.gain.setValueAtTime(g.gain.value, now);
+  g.gain.linearRampToValueAtTime(0, now + t);
+  if (src) setTimeout(() => { try { src.stop(); } catch (e) {} }, t * 1000 + 100);
+}
+async function setAmb(name) {
+  if (name === amb.name) return;
+  const old = amb; amb = { name, src: null, gain: null };
+  fadeOut(old.gain, old.src, 2.5);
+  if (!name || name === 'stop') return;
+  const buf = await buffer('audio/amb/' + name + '.mp3');
+  if (amb.name !== name) return;
+  const src = ctx.createBufferSource(); src.buffer = buf; src.loop = true;
+  const g = ctx.createGain(); g.gain.value = 0; src.connect(g); g.connect(ambBus);
+  src.start(); g.gain.linearRampToValueAtTime(1, ctx.currentTime + 3);
+  amb.src = src; amb.gain = g;
+}
+async function startWait() {
+  const buf = await buffer('audio/amb/attente.mp3');
+  stopWait();
+  const src = ctx.createBufferSource(); src.buffer = buf; src.loop = true;
+  const g = ctx.createGain(); g.gain.value = 0; src.connect(g); g.connect(waitBus);
+  src.start(); g.gain.linearRampToValueAtTime(1, ctx.currentTime + 1.5);
+  wait = { src, gain: g };
+}
+function stopWait() { if (wait.src) fadeOut(wait.gain, wait.src, 0.6); wait = { src: null, gain: null }; }
+
+function playClip(id) {
+  return new Promise(async resolve => {
+    const buf = await buffer('audio/clips/' + id + '.mp3');
+    const src = ctx.createBufferSource(); src.buffer = buf; src.connect(voiceBus);
+    voiceSrc = src; src.onended = () => { if (voiceSrc === src) { voiceSrc = null; clearInterval(ambTimer); resolve(); } };
+    const m = META[id] || {};
+    if (m.amb) setAmb(m.amb);
+    pendingAmb = (m.ambAt || []).slice();
+    clipT0 = ctx.currentTime + 0.05;
+    src.start(clipT0);
+    clearInterval(ambTimer);
+    ambTimer = setInterval(() => {
+      const t = ctx.currentTime - clipT0;
+      while (pendingAmb.length && pendingAmb[0].at <= t) setAmb(pendingAmb.shift().amb);
+    }, 200);
+  });
+}
+
+// ---------- scénario ----------
+const fill = s => { for (let k = 0; k < 3; k++) s = s.replace(/\{(\w+)\}/g, (_, v) => vars[v] ?? ''); return s.replace(/ ([?!:])/g, '\u00a0$1'); };
+function show(id) { document.querySelectorAll('.screen').forEach(e => e.classList.toggle('on', e.id === id)); }
+function setScene(name) {
+  document.body.className = 's-' + name;
+  $('#scene-icon').textContent = SCENES[name].icon;
+  $('#scene-title').textContent = SCENES[name].title;
+}
+function renderStars() {
+  const html = [0, 1, 2].map(i => `<span class="${i < stars ? 'got' : ''}">⭐</span>`).join('');
+  $('#stars').innerHTML = html; $('#stars2').innerHTML = html;
+}
+
+async function go(id) {
+  node = SC.nodes[id];
+  const n = node;
+  if (n.scene) setScene(n.scene);
+  if (n.random) Object.assign(vars, n.random[Math.floor(Math.random() * n.random.length)]);
+  show('s-play');
+  await playClip(fill(n.play));
+  if (node !== n) return; // recommencé entre-temps
+  if (n.star) { stars = Math.max(stars, n.star); renderStars(); }
+  if (n.choice) return ask(n);
+  if (n.end) return finish();
+  go(n.next);
+}
+
+function ask(n) {
+  const c = n.choice;
+  $('#question').textContent = fill(c.question);
+  const box = $('#options'); box.innerHTML = '';
+  box.className = c.options.length === 5 ? 'n5' : c.options.length === 3 ? 'n3' : '';
+  c.options.forEach((o, i) => {
+    const b = document.createElement('button'); b.className = 'opt';
+    if (o.bg) { b.style.background = o.bg; b.style.color = o.fg || '#fff'; }
+    b.style.animationDelay = (i * 0.08) + 's';
+    b.innerHTML = `<span class="ic">${fill(o.icon)}</span><span>${fill(o.label)}</span>`;
+    b.onclick = () => {
+      if (node !== n) return;
+      stopWait();
+      if (c.var) vars[c.var] = o.value;
+      go(o.next || c.next);
+    };
+    box.appendChild(b);
+  });
+  show('s-choice');
+  startWait();
+}
+
+function finish() {
+  show('s-end');
+  setTimeout(() => { if (!node || node.end) setAmb(null); }, 60000);
+  releaseWake();
+}
+
+async function start() {
+  if (!ctx) initAudio();
+  await ctx.resume();
+  vars = {}; stars = 0; renderStars(); paused = false; $('#btn-pause').textContent = '⏸ Pause';
+  $('#btn-restart').style.display = '';
+  requestWake();
+  go(SC.start);
+}
+function stopAll() {
+  node = null; stopWait(); clearInterval(ambTimer);
+  if (voiceSrc) { const s = voiceSrc; voiceSrc = null; s.onended = null; try { s.stop(); } catch (e) {} }
+}
+
+// ---------- écran allumé ----------
+async function requestWake() { try { wakeLock = await navigator.wakeLock?.request('screen'); } catch (e) {} }
+function releaseWake() { try { wakeLock?.release(); } catch (e) {} wakeLock = null; }
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && node && !node.end) requestWake(); });
+
+// ---------- boutons ----------
+$('#btn-start').onclick = start;
+$('#btn-again').onclick = () => { stopAll(); setAmb(null); start(); };
+$('#btn-restart').onclick = () => { if (confirmRestart()) { stopAll(); setAmb(null); start(); } };
+function confirmRestart() { const b = $('#btn-restart'); if (b.dataset.armed) { delete b.dataset.armed; b.textContent = '⟲ Recommencer'; return true; }
+  b.dataset.armed = 1; b.textContent = 'Toucher encore pour recommencer'; setTimeout(() => { delete b.dataset.armed; b.textContent = '⟲ Recommencer'; }, 3000); return false; }
+$('#btn-pause').onclick = async () => {
+  paused = !paused;
+  if (paused) { await ctx.suspend(); $('#btn-pause').textContent = '▶ Reprendre'; }
+  else { await ctx.resume(); $('#btn-pause').textContent = '⏸ Pause'; }
+};
+$('#btn-replay').onclick = async () => {
+  const n = node; if (!n) return;
+  stopWait(); show('s-play');
+  await playClip(fill(n.play));
+  if (node === n) ask(n);
+};
+$('#vol').oninput = e => { if (ambBus) ambBus.gain.value = +e.target.value; };
+
+// ---------- ciel étoilé discret ----------
+(function sky() {
+  const c = $('#sky'), g = c.getContext('2d'); let pts = [];
+  function size() { c.width = innerWidth; c.height = innerHeight; pts = Array.from({ length: 50 }, () => [Math.random() * c.width, Math.random() * c.height * .7, Math.random() * 6]); }
+  size(); addEventListener('resize', size);
+  (function f(t) { g.clearRect(0, 0, c.width, c.height);
+    for (const [x, y, p] of pts) { g.globalAlpha = .25 + .25 * Math.sin(t / 700 + p); g.fillStyle = '#fff'; g.fillRect(x, y, 2, 2); }
+    requestAnimationFrame(f); })(0);
+})();
+
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+boot();
+</script>
+</body>
+</html>
