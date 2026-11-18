@@ -12,8 +12,8 @@
 
 === P01
 @amb accueil
-Bonsoir ! Tu es bien au chaud ? Alors ouvre grand tes oreilles…
-Aujourd'hui, on va vivre une aventure. Et dans cette aventure, le héros ou l'héroïne… ce n'est pas un prince, ni une princesse. Ce n'est pas un roi, ni une reine. Non… le héros ou l'héroïne de cette histoire… c'est TOI !
+Bonsoir à toi ! Tu es bien au chaud ? Alors ouvre grand tes oreilles…
+Aujourd'hui, on va vivre une aventure. Et dans cette aventure, le héros ou l'héroïne… ce n'est pas un prince, ni une princesse. Ce n'est pas un roi, ni une reine. Non… le héros ou l'héroïne de cette histoire… c'est toi !
 Pendant l'histoire, tu vas devoir faire des choix. Écoute bien. Quand tu entends ce petit bruit-là…
 {carillon}
 … c'est que c'est à toi de décider ! Tu dis ta réponse bien fort à papa ou maman, et hop, l'histoire continue.
