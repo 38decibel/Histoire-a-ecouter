@@ -48,6 +48,7 @@
          animation: appear .5s ease backwards; }
   #options.n3 .opt, #options.n5 .opt { flex-direction:row; gap:14px; min-height:74px; justify-content:flex-start; padding-left:22px; }
   .opt .ic { font-size:44px; line-height:1; }
+  .opt .ic svg.sac { display:block; filter: drop-shadow(0 2px 2px #0003); }
   #options.n5 .opt .ic { font-size:30px; }
   #options.n5 .opt span:last-child { font-size:30px; margin-left:auto; padding-right:18px; }
   .opt:active { transform: translateY(4px) scale(.98); }
@@ -251,7 +252,8 @@ function ask(n) {
     const b = document.createElement('button'); b.className = 'opt';
     if (o.bg) { b.style.background = o.bg; b.style.color = o.fg || '#fff'; }
     b.style.animationDelay = (i * 0.08) + 's';
-    b.innerHTML = `<span class="ic">${fill(o.icon)}</span><span>${fill(o.label)}</span>`;
+    const ic = o.sac ? sacSVG(o.sac) : fill(o.icon);
+    b.innerHTML = `<span class="ic">${ic}</span><span>${fill(o.label)}</span>`;
     b.onclick = () => {
       if (node !== n) return;
       stopCountdown(); stopWait();
@@ -269,6 +271,25 @@ function ask(n) {
     b.classList.add('auto'); $('#cd-txt').textContent = '✨ Le hasard a choisi !';
     setTimeout(() => { if (node === n) b.onclick(); }, 1200);
   });
+}
+
+// ---------- dessin d'un sac à dos de la couleur choisie ----------
+function shade(hex, k) {
+  const n = parseInt(hex.slice(1), 16), f = c => Math.round(c * k);
+  return `rgb(${f(n >> 16)},${f((n >> 8) & 255)},${f(n & 255)})`;
+}
+function sacSVG(c) {
+  const d = shade(c, 0.82), dd = shade(c, 0.6);
+  return `<svg class="sac" viewBox="0 0 64 64" width="76" height="76" aria-hidden="true">
+    <path d="M24 16 v-5 a8 8 0 0 1 16 0 v5" fill="none" stroke="${dd}" stroke-width="4" stroke-linecap="round"/>
+    <rect x="9" y="26" width="7" height="22" rx="3.5" fill="${d}"/><rect x="48" y="26" width="7" height="22" rx="3.5" fill="${d}"/>
+    <rect x="13" y="15" width="38" height="44" rx="13" fill="${c}" stroke="${dd}" stroke-width="1.5"/>
+    <path d="M13 28 a13 13 0 0 1 13 -13 h12 a13 13 0 0 1 13 13 v3 h-38 z" fill="${d}"/>
+    <rect x="29" y="27" width="6" height="8" rx="2" fill="#fff8e1" stroke="${dd}" stroke-width="1"/>
+    <rect x="20" y="39" width="24" height="15" rx="5" fill="${d}"/>
+    <path d="M23 44 h18" stroke="${dd}" stroke-width="1.5" stroke-linecap="round"/>
+    <ellipse cx="22" cy="22" rx="4" ry="2" fill="#fff" opacity=".35"/>
+  </svg>`;
 }
 
 // ---------- compte à rebours pendant les choix ----------

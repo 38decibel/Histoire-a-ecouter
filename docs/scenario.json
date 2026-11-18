@@ -5,12 +5,12 @@
  "nodes": {
   "P01": {"scene": "accueil", "play": "P01", "next": "P02"},
   "P02": {"play": "P02", "choice": {"question": "De quelle couleur est le sac à dos ?", "var": "couleur", "options": [
-    {"label": "Rouge", "icon": "🎒", "bg": "#e53935", "value": "rouge"},
-    {"label": "Bleu", "icon": "🎒", "bg": "#1e88e5", "value": "bleu"},
-    {"label": "Jaune", "icon": "🎒", "bg": "#fdd835", "fg": "#333", "value": "jaune"},
-    {"label": "Vert", "icon": "🎒", "bg": "#43a047", "value": "vert"},
-    {"label": "Rose", "icon": "🎒", "bg": "#ec407a", "value": "rose"},
-    {"label": "Violet", "icon": "🎒", "bg": "#8e24aa", "value": "violet"}], "next": "P03"}},
+    {"label": "Rouge", "sac": "#e53935", "value": "rouge"},
+    {"label": "Bleu", "sac": "#1e88e5", "value": "bleu"},
+    {"label": "Jaune", "sac": "#fbc02d", "value": "jaune"},
+    {"label": "Vert", "sac": "#43a047", "value": "vert"},
+    {"label": "Rose", "sac": "#ec407a", "value": "rose"},
+    {"label": "Violet", "sac": "#8e24aa", "value": "violet"}], "next": "P03"}},
   "P03": {"play": "P03-{couleur}", "next": "P04"},
   "P04": {"play": "P04", "next": "P05"},
   "P05": {"play": "P05", "next": "E1-01"},
