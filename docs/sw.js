@@ -1,5 +1,5 @@
 // Service worker : l'histoire fonctionne hors connexion une fois chargée.
-const CACHE = 'lumina-v3';
+const CACHE = 'lumina-v4';
 self.addEventListener('install', e => self.skipWaiting());
 self.addEventListener('activate', e => e.waitUntil(
   caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));

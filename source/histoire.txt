@@ -20,7 +20,7 @@ Pendant l'histoire, tu vas devoir faire des choix. Écoute bien. Quand tu entend
 Et tu sais quoi ? Il n'y a pas de mauvaise réponse. Toutes les réponses mènent à l'aventure !
 
 === P02
-On essaie ? Pour partir à l'aventure, il te faut un sac à dos magique. {scintillement} De quelle couleur est-il ? Rouge ? Bleu ? Jaune ? Ou vert ?
+Alors, on fait un petit essai ensemble ? Pour partir à l'aventure, il te faut un sac à dos magique. {scintillement} De quelle couleur est-il ? Rouge ? Bleu ? Jaune ? Ou vert ?
 Dis ta couleur à papa ou maman !
 {carillon}
 
