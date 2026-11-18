@@ -65,7 +65,32 @@
   "ambAt": []
  },
  "E1-B": {
-  "dur": 21.0,
+  "dur": 25.8,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-L": {
+  "dur": 36.3,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-L-tambour": {
+  "dur": 24.6,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-L-flute": {
+  "dur": 24.6,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-L-clochettes": {
+  "dur": 22.5,
+  "amb": null,
+  "ambAt": []
+ },
+ "E1-L-FIN": {
+  "dur": 22.7,
   "amb": null,
   "ambAt": []
  },
@@ -130,12 +155,62 @@
   "ambAt": []
  },
  "E2-B": {
-  "dur": 21.1,
+  "dur": 31.6,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-LO": {
+  "dur": 30.6,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-LO-ricochets": {
+  "dur": 29.7,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-LO-cache": {
+  "dur": 33.2,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-LO-bulles": {
+  "dur": 26.5,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-LO-FIN": {
+  "dur": 14.4,
   "amb": null,
   "ambAt": []
  },
  "E2-C": {
-  "dur": 25.4,
+  "dur": 31.9,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-LI": {
+  "dur": 32.5,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-LI-cascade": {
+  "dur": 18.4,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-LI-tronc": {
+  "dur": 16.7,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-LI-fleurs": {
+  "dur": 18.8,
+  "amb": null,
+  "ambAt": []
+ },
+ "E2-LI-FIN": {
+  "dur": 25.1,
   "amb": null,
   "ambAt": []
  },
@@ -341,6 +416,11 @@
  },
  "F-R-compagnon-herisson": {
   "dur": 22.9,
+  "amb": null,
+  "ambAt": []
+ },
+ "F-R-compagnon-lutin": {
+  "dur": 24.4,
   "amb": null,
   "ambAt": []
  },

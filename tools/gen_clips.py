@@ -32,16 +32,23 @@ VOICES = {
                        fx='rubberband=pitch=0.82,tremolo=f=19:d=0.55,equalizer=f=700:t=q:w=1:g=5'),
     'luciole': dict(voice='fr-FR-EloiseNeural', rate='+4%', pitch='+0Hz',
                     fx='rubberband=pitch=1.55,aecho=0.8:0.6:60|120:0.25|0.15'),
+    'lutin': dict(voice='fr-FR-HenriNeural', rate='+4%', pitch='+0Hz',
+                  fx='rubberband=pitch=1.45,equalizer=f=2500:t=q:w=1:g=3'),
+    'loutre': dict(voice='fr-FR-EloiseNeural', rate='+8%', pitch='+0Hz',
+                   fx='rubberband=pitch=1.18,equalizer=f=1800:t=q:w=1:g=4'),
+    'libellule': dict(voice='fr-FR-EloiseNeural', rate='+0%', pitch='+0Hz',
+                      fx='rubberband=pitch=1.42,tremolo=f=7:d=0.15'),
     'hibou': dict(voice='fr-FR-RemyMultilingualNeural', rate='-14%', pitch='+0Hz',
                   fx='rubberband=pitch=0.74,vibrato=f=5:d=0.08,aecho=0.8:0.5:90:0.2'),
 }
 QUOTE_STYLE = [(r'E3-H', 'hibou'), (r'lapin', 'lapin'), (r'herisson', 'herisson'), (r'canards', 'cane'),
-               (r'grenouille', 'grenouille'), (r'E3-G', 'luciole')]
+               (r'grenouille', 'grenouille'), (r'E3-G', 'luciole'),
+               (r'E1-L', 'lutin'), (r'E2-LO', 'loutre'), (r'E2-LI', 'libellule')]
 
 GAP_LINE = 0.55     # respiration entre deux paragraphes
 GAP_CHUNK = 0.12    # entre deux morceaux d'une même ligne
 REPEAT_GAP = {'croc': 0.5, 'boing': 0.38}
-LEAD = {'carillon': None, 'ruisseau_loin': None, 'fee_long': 2.2, 'fee_depart': 2.0, 'jingle_etoile': 1.6,
+LEAD = {'carillon': None, 'tambour': None, 'flute': None, 'clochettes': None, 'ricochet': 1.6, 'rocher': 2.0, 'cascade': 1.6, 'ruisseau_loin': None, 'fee_long': 2.2, 'fee_depart': 2.0, 'jingle_etoile': 1.6,
         'jingle_etoile_doux': None, 'reveil_lucioles': 1.8, 'envol': 1.8, 'voix_lointaine': 2.6, 'vent': 1.2,
         'abeille': 1.4, 'pas_feuilles': 1.6, 'pas_herbe': 1.5, 'tintement3': 1.5, 'gouttes': 1.4}
 # None = on attend la fin du son ; sinon la voix reprend après LEAD secondes (le son continue dessous)

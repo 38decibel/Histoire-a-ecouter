@@ -234,6 +234,7 @@ async function go(id) {
   const n = node;
   if (n.scene) setScene(n.scene);
   if (n.random) Object.assign(vars, n.random[Math.floor(Math.random() * n.random.length)]);
+  if (n.set) Object.assign(vars, n.set);
   show('s-play');
   await playClip(fill(n.play));
   if (node !== n) return; // recommencé entre-temps

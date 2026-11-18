@@ -19,7 +19,13 @@
     {"label": "Les fleurs", "icon": "🌸", "next": "E1-A"},
     {"label": "Les pierres brillantes", "icon": "💎", "next": "E1-B"}]}},
   "E1-A": {"play": "E1-A", "next": "E1-R"},
-  "E1-B": {"play": "E1-B", "next": "E1-R"},
+  "E1-B": {"play": "E1-B", "set": {"animal": "lutin"}, "next": "E1-L"},
+  "E1-L": {"play": "E1-L", "choice": {"question": "Quel instrument pour Pirouette ?", "var": "instrument", "options": [
+    {"label": "Le tambour", "icon": "🥁", "value": "tambour"},
+    {"label": "La flûte", "icon": "🎵", "value": "flute"},
+    {"label": "Les clochettes", "icon": "🔔", "value": "clochettes"}], "next": "E1-LM"}},
+  "E1-LM": {"play": "E1-L-{instrument}", "next": "E1-LF"},
+  "E1-LF": {"play": "E1-L-FIN", "star": 1, "next": "E1-FIN"},
   "E1-R": {"random": [{"animal": "lapin", "fruit": "🥕", "fruits": "carottes"}, {"animal": "herisson", "fruit": "🍎", "fruits": "pommes"}],
     "play": "E1-R-{animal}", "choice": {"question": "Combien de {fruits} ?", "var": "nombre", "grid": 5, "options": [
     {"label": "1", "icon": "{fruit}", "value": "1"},
@@ -36,8 +42,20 @@
     {"label": "La feuille-bateau", "icon": "🍃", "next": "E2-B"},
     {"label": "Les cailloux", "icon": "🪨", "next": "E2-C"}]}},
   "E2-A": {"play": "E2-A", "next": "E2-02"},
-  "E2-B": {"play": "E2-B", "next": "E2-02"},
-  "E2-C": {"play": "E2-C", "next": "E2-02"},
+  "E2-B": {"play": "E2-B", "next": "E2-LO"},
+  "E2-LO": {"play": "E2-LO", "choice": {"question": "À quoi jouer avec Frisette la loutre ?", "var": "jeu", "options": [
+    {"label": "Les ricochets", "icon": "🪨", "value": "ricochets"},
+    {"label": "Cache-cache", "icon": "🙈", "value": "cache"},
+    {"label": "Les bulles", "icon": "🫧", "value": "bulles"}], "next": "E2-LOJ"}},
+  "E2-LOJ": {"play": "E2-LO-{jeu}", "next": "E2-LOF"},
+  "E2-LOF": {"play": "E2-LO-FIN", "star": 2, "next": "E2-FIN"},
+  "E2-C": {"play": "E2-C", "next": "E2-LI"},
+  "E2-LI": {"play": "E2-LI", "choice": {"question": "Où chercher la maman libellule ?", "var": "lieu", "options": [
+    {"label": "La cascade", "icon": "🌊", "value": "cascade"},
+    {"label": "Le vieux tronc", "icon": "🪵", "value": "tronc"},
+    {"label": "Les fleurs", "icon": "🌷", "value": "fleurs"}], "next": "E2-LIL"}},
+  "E2-LIL": {"play": "E2-LI-{lieu}", "next": "E2-LIF"},
+  "E2-LIF": {"play": "E2-LI-FIN", "star": 2, "next": "E2-FIN"},
   "E2-02": {"play": "E2-02", "next": "E2-R"},
   "E2-R": {"random": [{"ami": "canards"}, {"ami": "grenouille"}], "play": "E2-R-{ami}", "next": "E2-Q"},
   "E2-Q": {"play": "E2-Q", "choice": {"question": "Sous quel nénuphar ?", "var": "fleur", "options": [

@@ -71,8 +71,38 @@ Et puis, au bout du chemin, derrière un gros buisson… {buisson} quelque chose
 === E1-B
 Le chemin des pierres brillantes ! À chaque pas, les pierres chantent sous tes pieds… {tintements_cristallins} et elles s'allument : une rouge, une bleue, une dorée… Comme si tu marchais sur un arc-en-ciel !
 Tu sautes d'une pierre à l'autre : hop, hop, hop !
-Et puis, au bout du chemin, derrière un gros buisson… {buisson} quelque chose bouge.
+Au bout du chemin, il y a un gros rocher tout rond, couvert de mousse. Et assis dessus… {grelots} un tout petit lutin, avec un bonnet pointu et des chaussons à grelots !
 
+
+=== E1-L
+Le petit lutin a l'air tout triste. Il te dit : « Bonjour… Je m'appelle Pirouette, le lutin musicien. Cette nuit, une étoile est tombée sur mon rocher, et le rocher s'est refermé dessus ! Pour qu'il s'ouvre, il faut lui jouer de la musique… Mais j'ai perdu mon instrument ! »
+{zip} Tu ouvres ton sac à dos magique… {scintillement} et dedans, il y a trois instruments : un tambour, une flûte, et des clochettes.
+Quel instrument veux-tu donner à Pirouette ? Le tambour ? La flûte ? Ou les clochettes ?
+{carillon}
+
+=== E1-L-tambour
+Le tambour ! Pirouette le prend dans ses petits bras, et il tape dessus, de toutes ses forces : {tambour}
+Allez, joue avec lui ! Tape bien fort sur tes genoux !
+{pause 3}
+Bravo ! Pirouette danse en sautant d'un pied sur l'autre, et ses grelots font la musique avec vous. {grelots}
+
+=== E1-L-flute
+La flûte ! Pirouette la porte à sa bouche, et il joue un joli petit air : {flute}
+Allez, chante avec lui ! Fais « la, la, la » tout doucement !
+{pause 3}
+Bravo ! Pirouette tourne sur lui-même comme une toupie, tellement il est content. {grelots}
+
+=== E1-L-clochettes
+Les clochettes ! Pirouette les secoue au-dessus de sa tête : {clochettes}
+Allez, joue avec lui ! Secoue tes mains en l'air, comme des petites clochettes !
+{pause 3}
+Bravo ! Pirouette fait une grande pirouette… c'est pour ça qu'il s'appelle comme ça ! {grelots}
+
+=== E1-L-FIN
+Et tout à coup… {rocher} le gros rocher se met à trembler. Il s'ouvre en deux, tout doucement, comme une coquille d'œuf.
+Et au milieu… quelque chose brille.
+{jingle_etoile} C'est… la première étoile de Lumina !
+Pirouette saute de joie : « Merci ! Grâce à ta musique, mon rocher s'est ouvert ! »
 === E1-R-lapin
 Qui est là ? … C'est un petit lapin blanc, avec de grandes oreilles toutes douces ! Mais il a l'air tout triste. Il te dit tout doucement : « J'ai tellement faim… Tu n'aurais pas des carottes ? »
 {zip} Tu ouvres ton sac à dos magique… {scintillement} et dedans, il y a des carottes !
@@ -134,13 +164,63 @@ Encore quelques pas… et voilà, tu es de l'autre côté !
 === E2-B
 La feuille-bateau ! Tu montes dessus, tout doucement… Elle bouge un peu, mais elle te porte comme un vrai petit bateau. {clapotis} La rivière te pousse gentiment.
 Tu glisses sur l'eau, le vent te caresse les cheveux… Quel beau voyage !
-Et la feuille vient se poser tout en douceur sur l'autre rive. Tu sautes à terre : hop !
+Mais au lieu d'aller vers l'autre rive, la feuille tourne, tourne… et descend tranquillement la rivière. Elle s'arrête au pied d'un grand saule, dans un petit coin d'eau tout calme.
+Et là… {plouf} une petite tête toute ronde sort de l'eau, avec des moustaches qui gigotent !
 
+
+=== E2-LO
+C'est une loutre ! Une petite loutre toute mouillée, avec des yeux brillants comme des billes. Elle fait une galipette dans l'eau {clapotis} et elle te dit : « Bonjour ! Moi, c'est Frisette. Tu cherches une étoile ? J'en ai vu une tomber par ici… et je l'ai cachée, pour jouer ! Si tu joues avec moi, je te la donne. »
+À quoi veux-tu jouer avec Frisette ? Aux ricochets ? À cache-cache ? Ou à faire des bulles ?
+{carillon}
+
+=== E2-LO-ricochets
+Les ricochets ! Frisette te donne un petit caillou, tout plat et tout lisse. Tu le lances sur l'eau… {ricochet} Il saute une fois, deux fois, trois fois ! Frisette applaudit avec ses petites pattes.
+« Bravo ! À moi, maintenant ! » Elle lance son caillou… {ricochet} et il rebondit, rebondit… jusque sur une feuille de nénuphar. Et sur cette feuille… quelque chose brille ! C'est là que Frisette avait caché l'étoile.
+
+=== E2-LO-cache
+Cache-cache ! Frisette ferme les yeux et elle compte. Compte avec elle ! Un… {pause 1} deux… {pause 1} trois… {pause 1} quatre… {pause 1} cinq !
+Toi, tu te caches derrière le grand saule. Chut… Frisette cherche partout : sous l'eau, derrière les roseaux… « Trouvé ! » {rire}
+« À moi de me cacher ! » Elle plonge… {plouf} Tu regardes partout, partout… et tout au fond de l'eau, tu vois une petite lumière qui brille ! C'est là que Frisette avait caché l'étoile.
+
+=== E2-LO-bulles
+Les bulles ! Frisette met son museau dans l'eau et elle souffle très fort : {bulles} Plein de bulles remontent à la surface !
+À toi, maintenant : souffle très fort, comme Frisette !
+{pause 2}
+{bulles} Bravo ! Les bulles montent, montent… et la plus grosse est toute brillante. {pop} Elle éclate… et quelque chose tombe dans tes mains. C'est là que Frisette avait caché l'étoile !
+
+=== E2-LO-FIN
+{jingle_etoile} C'est… la deuxième étoile de Lumina !
+Frisette fait une dernière galipette pour te dire au revoir… {plouf} et ta feuille-bateau te ramène tout doucement sur la rive. Au revoir, Frisette !
 === E2-C
 Les gros cailloux ! Tu prends ton élan… et hop ! Un caillou. Hop ! Deux cailloux. Hop ! Trois cailloux…
 Oh ! Le quatrième caillou est tout glissant… {plouf} Ton pied touche l'eau. Elle est toute fraîche ! Ça chatouille ! {rire}
 Allez, encore un saut… hop ! Et te voilà de l'autre côté, avec juste un petit pied mouillé.
+Mais… chut ! Écoute bien… Quelqu'un pleure tout doucement, là, dans les grands roseaux.
 
+
+=== E2-LI
+Tu écartes les roseaux… {bruissement} et tu découvres une toute petite libellule, avec des ailes fines comme du papier de soie. Elle a de grosses larmes dans les yeux.
+« Je m'appelle Zinzoline… J'ai perdu ma maman ! Elle avait trouvé une petite étoile tombée du ciel, et elle est partie la cacher… Tu veux bien m'aider à la retrouver ? »
+Bien sûr ! Mais où chercher ? Derrière la cascade ? Dans le vieux tronc d'arbre ? Ou au milieu des fleurs, au bord de l'eau ?
+{carillon}
+
+=== E2-LI-cascade
+La cascade ! Tu t'approches… {cascade} L'eau tombe en faisant plein de petites gouttes qui brillent au soleil, comme des perles.
+Et derrière le rideau d'eau… deux grandes ailes bleues ! C'est la maman de Zinzoline ! Elle avait caché l'étoile là, bien au sec, derrière la cascade.
+
+=== E2-LI-tronc
+Le vieux tronc d'arbre ! Il est tout creux, et il fait bien sombre dedans. Tu frappes tout doucement : {toc}
+Une petite voix répond : « Qui est là ? » C'est la maman de Zinzoline ! Elle faisait une petite sieste à l'abri, avec l'étoile tout contre elle, comme une veilleuse.
+
+=== E2-LI-fleurs
+Les fleurs au bord de l'eau ! Il y a des iris jaunes, des fleurs violettes, et des petites abeilles qui butinent. {abeille}
+Et posée sur la plus grande fleur… une grande libellule aux ailes bleues. C'est la maman de Zinzoline ! Elle avait caché l'étoile au creux d'un pétale, comme dans un petit berceau.
+
+=== E2-LI-FIN
+Zinzoline vole vers sa maman et lui fait plein de câlins. {ailes_libellule} « Merci ! Merci ! Grâce à toi, j'ai retrouvé ma maman ! »
+La maman libellule te donne l'étoile avec un grand sourire.
+{jingle_etoile} C'est… la deuxième étoile de Lumina !
+Les deux libellules font trois petits tours autour de ta tête pour te dire au revoir… {ailes_libellule} Au revoir, Zinzoline !
 === E2-02
 De ce côté-là de la rivière, il y a une petite mare toute calme, toute ronde. Sur l'eau flottent de grandes feuilles vertes : ce sont des nénuphars.
 Et au bord de la mare… tu entends quelqu'un…
@@ -318,6 +398,12 @@ L: Et puis… quelqu'un voudrait te dire bonne nuit.
 L: Pour cette nuit, il sera ton compagnon de rêve. Quand tu fermeras les yeux, il viendra jouer avec toi dans tes rêves.
 Le petit hérisson te fait un gros câlin… attention, ça pique un tout petit peu ! {rire}
 
+
+=== F-R-compagnon-lutin
+L: Et puis… quelqu'un voudrait te dire bonne nuit.
+{grelots} C'est Pirouette, le petit lutin musicien ! Celui à qui tu as donné un instrument.
+L: Pour cette nuit, il sera ton compagnon de rêve. Quand tu fermeras les yeux, il viendra te jouer une jolie musique dans tes rêves.
+Pirouette te fait un gros câlin, et ses grelots chantent tout doucement. {grelots}
 === F-R-voeu
 L: Et puis… je t'offre un vœu. Un vœu rien qu'à toi. Ferme les yeux… pense très fort à quelque chose qui te rend heureux ou heureuse… et dis-le tout bas à papa ou maman.
 {pause 5}

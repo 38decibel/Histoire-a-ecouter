@@ -74,12 +74,40 @@ _r = load('1419', .05, 1.25); S['rire_luciole'] = reverb(np.interp(np.arange(0, 
 S['ronflement'] = load('1070', .2, 4.4)
 S['meuh_echo'] = reverb(echo(lp(load('2383', 1.0, 1.7), 3000), .45, .55, 3), .45, 2.2)
 
+# --- branches uniques (lutin, loutre, libellule) ---
+S['grelots'] = load('0585', .6, 1.5)
+_c, _e = trim(load('0560', .1, .8)), trim(load('0561', .1, .3))
+S['tambour'] = mix(*[(x, t, g) for x, t, g in [(_c, 0, 1), (_e, .38, .7), (_e, .57, .7), (_c, .76, 1), (_c, 1.52, 1), (_e, 1.9, .7), (_e, 2.09, .7), (_c, 2.28, 1)]])
+def _flute(f, d):
+    t = np.arange(int(d * SR)) / SR
+    vib = 1 + .006 * np.sin(2 * np.pi * 5.2 * t)
+    ph = 2 * np.pi * np.cumsum(f * vib) / SR
+    y = np.sin(ph) + .25 * np.sin(2 * ph) + .08 * np.sin(3 * ph)
+    env = np.minimum(1, t / .06) * np.minimum(1, (d - t) / .08)
+    return y * env + rng.standard_normal(len(t)) * .02 * env
+_mel = [('G5', .3), ('A5', .3), ('C6', .45), ('A5', .3), ('G5', .3), ('E5', .6), ('G5', .7)]
+_parts, _t = [], 0
+for n, d in _mel:
+    _parts.append((_flute(N(n), d + .05), _t, .5)); _t += d
+S['flute'] = reverb(mix(*_parts), .3)
+S['clochettes'] = reverb(mix(*[(bell(N(n), .9, 4), i * .13, .5) for i, n in enumerate(['C7', 'E7', 'G7', 'E7', 'C7', 'G6', 'C7', 'E7', 'G7', 'C8'])]), .35)
+_s = fade(trim(load('1534', 0, .35)), .002, .08)
+S['ricochet'] = mix((_s, 0, 1), (_s, .42, .7), (_s, .72, .5), (_s, .93, .35), (load('1532', 0, 1.0), 1.15, .5))
+S['cascade'] = load('0996', 0, 3.5)
+S['toc'] = load('0374', 0, .9)
+_n = int(1.3 * SR); _tt = np.arange(_n) / SR
+_w = hp(lp(rng.standard_normal(_n), 5000), 1500) * (0.5 + 0.5 * np.sin(2 * np.pi * 34 * _tt)) ** 2
+S['ailes_libellule'] = _w * np.sin(np.pi * _tt / 1.3) ** 1.5
+_n = int(2.2 * SR); _tt = np.arange(_n) / SR
+S['rocher'] = mix((lp(rng.standard_normal(_n), 120) * np.sin(np.pi * _tt / 2.2) * 6, 0, 1),
+                  (sparkle(1.6, 24, 1500, 6500, rising=True, density_up=True, seed=21), .7, .7))
+
 LEAD = {}  # temps (s) après lequel la voix peut reprendre (le reste du son passe sous la voix)
 for k, x in S.items():
     x = trim(x) if k not in ('ruisseau loin',) else x
     x = fade(x, .005, min(.25, len(x) / SR * .3))
     peak = {'ruisseau loin': -10, 'abeille': -8, 'vent': -9, 'pas feuilles': -8, 'pas herbe': -8, 'bruissement': -9,
-            'clapotis': -9, 'ronflement': -9, 'rire': -7, 'voix lointaine': -10, 'gouttes': -6, 'fee depart': -6, 'jingle etoile doux': -9}.get(k, -4)
+            'clapotis': -9, 'ronflement': -9, 'cascade': -9, 'ailes_libellule': -10, 'rire': -7, 'voix lointaine': -10, 'gouttes': -6, 'fee depart': -6, 'jingle etoile doux': -9}.get(k, -4)
     x = norm(x, peak)
     save_wav(x, OUT + k.replace(' ', '_') + '.wav')
     print(f'{k:24s} {len(x) / SR:4.1f}s')
