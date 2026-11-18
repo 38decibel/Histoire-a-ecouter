@@ -69,13 +69,17 @@ S['miaou'] = load('1890', .05, 2.0)
 S['meuh'] = load('2383', 1.0, 1.7)
 S['cocorico'] = load('0283', .3, 2.0)
 S['ailes'] = load('2893', .2, 1.2)
+S['rire'] = load('1419', .05, 1.25)
+_r = load('1419', .05, 1.25); S['rire_luciole'] = reverb(np.interp(np.arange(0, len(_r), 1.45), np.arange(len(_r)), _r), .3)
+S['ronflement'] = load('1070', .2, 4.4)
+S['meuh_echo'] = reverb(echo(lp(load('2383', 1.0, 1.7), 3000), .45, .55, 3), .45, 2.2)
 
 LEAD = {}  # temps (s) après lequel la voix peut reprendre (le reste du son passe sous la voix)
 for k, x in S.items():
     x = trim(x) if k not in ('ruisseau loin',) else x
     x = fade(x, .005, min(.25, len(x) / SR * .3))
     peak = {'ruisseau loin': -10, 'abeille': -8, 'vent': -9, 'pas feuilles': -8, 'pas herbe': -8, 'bruissement': -9,
-            'clapotis': -9, 'voix lointaine': -10, 'gouttes': -6, 'fee depart': -6, 'jingle etoile doux': -9}.get(k, -4)
+            'clapotis': -9, 'ronflement': -9, 'rire': -7, 'voix lointaine': -10, 'gouttes': -6, 'fee depart': -6, 'jingle etoile doux': -9}.get(k, -4)
     x = norm(x, peak)
     save_wav(x, OUT + k.replace(' ', '_') + '.wav')
     print(f'{k:24s} {len(x) / SR:4.1f}s')

@@ -19,12 +19,24 @@ META = os.path.join(ROOT, 'docs', 'clips.json')
 SR = 24000
 
 VOICES = {
-    'N': dict(voice='fr-FR-HenriNeural', rate='-10%', pitch='+0Hz'),       # narrateur
-    'L': dict(voice='fr-FR-EloiseNeural', rate='-6%', pitch='+4Hz'),       # Lumina
-    'petit': dict(voice='fr-FR-HenriNeural', rate='-4%', pitch='+22Hz'),   # petits animaux, luciole
-    'grave': dict(voice='fr-FR-HenriNeural', rate='-18%', pitch='-12Hz'),  # le vieux hibou
+    'N': dict(voice='fr-FR-RemyMultilingualNeural', rate='-4%', pitch='+0Hz'),   # narrateur
+    'L': dict(voice='fr-FR-EloiseNeural', rate='-4%', pitch='+4Hz'),             # Lumina
+    # voix des animaux : voix de synthèse + effets (rubberband décale la hauteur ET le timbre → voix de dessin animé)
+    'lapin': dict(voice='fr-FR-EloiseNeural', rate='+6%', pitch='+0Hz',
+                  fx='rubberband=pitch=1.38:tempo=1.0'),
+    'herisson': dict(voice='fr-FR-EloiseNeural', rate='+0%', pitch='+0Hz',
+                     fx='rubberband=pitch=1.22,equalizer=f=3000:t=q:w=1:g=4'),
+    'cane': dict(voice='fr-FR-DeniseNeural', rate='+4%', pitch='+0Hz',
+                 fx='rubberband=pitch=1.28,highpass=f=450,equalizer=f=1400:t=q:w=0.8:g=10,tremolo=f=11:d=0.3'),
+    'grenouille': dict(voice='fr-FR-EloiseNeural', rate='-2%', pitch='+0Hz',
+                       fx='rubberband=pitch=0.82,tremolo=f=19:d=0.55,equalizer=f=700:t=q:w=1:g=5'),
+    'luciole': dict(voice='fr-FR-EloiseNeural', rate='+4%', pitch='+0Hz',
+                    fx='rubberband=pitch=1.55,aecho=0.8:0.6:60|120:0.25|0.15'),
+    'hibou': dict(voice='fr-FR-RemyMultilingualNeural', rate='-14%', pitch='+0Hz',
+                  fx='rubberband=pitch=0.74,vibrato=f=5:d=0.08,aecho=0.8:0.5:90:0.2'),
 }
-QUOTE_STYLE = [(r'E3-H', 'grave'), (r'lapin|herisson|canards|grenouille|E3-G1|E3-G-', 'petit')]
+QUOTE_STYLE = [(r'E3-H', 'hibou'), (r'lapin', 'lapin'), (r'herisson', 'herisson'), (r'canards', 'cane'),
+               (r'grenouille', 'grenouille'), (r'E3-G', 'luciole')]
 
 GAP_LINE = 0.55     # respiration entre deux paragraphes
 GAP_CHUNK = 0.12    # entre deux morceaux d'une même ligne
@@ -109,7 +121,12 @@ async def tts(voice, text, sem):
             for attempt in range(4):
                 try:
                     await edge_tts.Communicate(text, p['voice'], rate=p['rate'], pitch=p['pitch']).save(path + '.tmp')
-                    os.replace(path + '.tmp', path); break
+                    if p.get('fx'):
+                        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', path + '.tmp', '-af', p['fx'], '-f', 'mp3', path + '.fx'], check=True)
+                        os.replace(path + '.fx', path); os.remove(path + '.tmp')
+                    else:
+                        os.replace(path + '.tmp', path)
+                    break
                 except Exception as e:
                     print('  retry', attempt, text[:40], e); await asyncio.sleep(2)
     return path
