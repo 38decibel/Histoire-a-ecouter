@@ -39,7 +39,7 @@ VOICES = {
     'libellule': dict(voice='fr-FR-EloiseNeural', rate='+0%', pitch='+0Hz',
                       fx='rubberband=pitch=1.42,tremolo=f=7:d=0.15'),
     'hibou': dict(voice='fr-FR-RemyMultilingualNeural', rate='-14%', pitch='+0Hz',
-                  fx='rubberband=pitch=0.74,vibrato=f=5:d=0.08,aecho=0.8:0.5:90:0.2'),
+                  fx='rubberband=pitch=0.87,highpass=f=90,equalizer=f=2200:t=q:w=1:g=5,aecho=0.8:0.4:80:0.15'),
 }
 QUOTE_STYLE = [(r'E3-H', 'hibou'), (r'lapin', 'lapin'), (r'herisson', 'herisson'), (r'canards', 'cane'),
                (r'grenouille', 'grenouille'), (r'E3-G', 'luciole'),
@@ -156,6 +156,12 @@ def build(cid, clip, tts_paths, sfx_cache):
         for e in tokens(cid, spk, line):
             if e[0] == 'say':
                 x = trim(load_wav(tts_paths[(e[1], e[2])]))
+                if e[1] not in ('N', 'L'):
+                    # les voix de personnages (effets) sont ramenées au même volume que le narrateur
+                    act = x[np.abs(x) > 0.01]
+                    if len(act):
+                        g = 10 ** (-21 / 20) / np.sqrt((act ** 2).mean())
+                        x = x * min(g, 0.97 / (np.abs(x).max() + 1e-9))
                 voice = place(voice, x * 0.9, t); t += len(x) / SR + GAP_CHUNK
             elif e[0] == 'pause':
                 t += e[1]
