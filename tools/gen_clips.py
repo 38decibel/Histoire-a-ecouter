@@ -31,7 +31,7 @@ VOICES = {
     'grenouille': dict(voice='fr-FR-EloiseNeural', rate='-2%', pitch='+0Hz',
                        fx='rubberband=pitch=0.82,tremolo=f=19:d=0.55,equalizer=f=700:t=q:w=1:g=5'),
     'luciole': dict(voice='fr-FR-EloiseNeural', rate='+4%', pitch='+0Hz',
-                    fx='rubberband=pitch=1.55,aecho=0.8:0.6:60|120:0.25|0.15'),
+                    fx='rubberband=pitch=1.32,aecho=0.8:0.5:60:0.15'),
     'lutin': dict(voice='fr-FR-HenriNeural', rate='+4%', pitch='+0Hz',
                   fx='rubberband=pitch=1.45,equalizer=f=2500:t=q:w=1:g=3'),
     'loutre': dict(voice='fr-FR-EloiseNeural', rate='+8%', pitch='+0Hz',
@@ -119,24 +119,88 @@ def trim(x, thr=0.01):
     return x[max(0, idx[0] - 240): idx[-1] + 480]
 
 
-async def tts(voice, text, sem):
+def runs(events):
+    """Regroupe les morceaux de parole consécutifs d'une même voix (séparés seulement par des bruitages ou
+    des pauses) : ils sont synthétisés d'un seul tenant, puis découpés aux balises grâce aux minutages des
+    mots. La voix garde ainsi une intonation naturelle et le contexte français (pas de mots isolés)."""
+    out, cur = {}, None
+    for i, e in enumerate(events):
+        if e[0] == 'say':
+            if cur and cur['voice'] == e[1]:
+                cur['texts'].append(e[2])
+            else:
+                cur = {'voice': e[1], 'texts': [e[2]], 'idx': []}
+            cur['idx'].append(i)
+            out[i] = cur
+    return out
+
+
+def run_key(r):
+    return (r['voice'], tuple(r['texts']))
+
+
+async def tts(key, sem):
+    voice, texts = key
     p = VOICES[voice]
-    key = hashlib.md5(json.dumps([p, text]).encode()).hexdigest()
-    path = os.path.join(CACHE, key + '.mp3')
-    if not os.path.exists(path):
+    h = hashlib.md5(json.dumps([p, list(texts), 'run1']).encode()).hexdigest()
+    path, bpath = os.path.join(CACHE, h + '.mp3'), os.path.join(CACHE, h + '.json')
+    if not os.path.exists(bpath):
         async with sem:
             for attempt in range(4):
                 try:
-                    await edge_tts.Communicate(text, p['voice'], rate=p['rate'], pitch=p['pitch']).save(path + '.tmp')
+                    audio, bounds = b'', []
+                    com = edge_tts.Communicate(' '.join(texts), p['voice'], rate=p['rate'], pitch=p['pitch'],
+                                               boundary='WordBoundary')
+                    async for m in com.stream():
+                        if m['type'] == 'audio':
+                            audio += m['data']
+                        elif m['type'] == 'WordBoundary':
+                            bounds.append([m['offset'] / 1e7, m['duration'] / 1e7, m['text']])
+                    if not audio:
+                        raise RuntimeError('pas d\'audio')
+                    open(path + '.tmp', 'wb').write(audio)
                     if p.get('fx'):
-                        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', path + '.tmp', '-af', p['fx'], '-f', 'mp3', path + '.fx'], check=True)
-                        os.replace(path + '.fx', path); os.remove(path + '.tmp')
+                        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', path + '.tmp', '-af', p['fx'], '-f', 'mp3', path], check=True)
+                        os.remove(path + '.tmp')
                     else:
                         os.replace(path + '.tmp', path)
+                    json.dump(bounds, open(bpath, 'w'), ensure_ascii=False)
                     break
                 except Exception as e:
-                    print('  retry', attempt, text[:40], e); await asyncio.sleep(2)
-    return path
+                    print('  retry', attempt, texts[0][:40], e); await asyncio.sleep(2)
+    return path, bpath
+
+
+def slices(key, paths):
+    """découpe l'audio d'un groupe en autant de morceaux que de textes"""
+    voice, texts = key
+    path, bpath = paths
+    x = load_wav(path)
+    if len(texts) == 1:
+        return [x]
+    bounds = json.load(open(bpath))
+    joined = ' '.join(texts)
+    pos, starts = 0, []
+    for off, dur, w in bounds:
+        j = joined.find(w, pos)
+        if j < 0:
+            continue
+        starts.append((j, off, off + dur)); pos = j + len(w)
+    cuts, c = [], 0
+    for t in texts[:-1]:
+        c += len(t) + 1
+        nxt = [b for b in starts if b[0] >= c]
+        prv = [b for b in starts if b[0] < c]
+        if not nxt or not prv:
+            cuts.append(None); continue
+        a, b = prv[-1][2], nxt[0][1]
+        cuts.append(int(SR * ((a + b) / 2 if b > a else b - 0.02)))
+    pieces, last = [], 0
+    for k in cuts:
+        k = last if k is None else k
+        pieces.append(x[last:k]); last = k
+    pieces.append(x[last:])
+    return pieces
 
 
 def place(track, x, t):
@@ -153,9 +217,17 @@ def build(cid, clip, tts_paths, sfx_cache):
     for li, (spk, line) in enumerate(clip['lines']):
         if li:
             t += GAP_LINE
-        for e in tokens(cid, spk, line):
+        evs = tokens(cid, spk, line)
+        rs, cut = runs(evs), {}
+        for i, e in enumerate(evs):
             if e[0] == 'say':
-                x = trim(load_wav(tts_paths[(e[1], e[2])]))
+                r = rs[i]; k = run_key(r)
+                if k not in cut:
+                    cut[k] = slices(k, tts_paths[k])
+                x = cut[k][r['idx'].index(i)]
+                if not len(x) or np.abs(x).max() < 1e-4:
+                    continue
+                x = trim(x)
                 if e[1] not in ('N', 'L'):
                     # les voix de personnages (effets) sont ramenées au même volume que le narrateur
                     act = x[np.abs(x) > 0.01]
@@ -204,11 +276,10 @@ async def main(only):
     jobs = {}
     for cid in ids:
         for spk, line in clips[cid]['lines']:
-            for e in tokens(cid, spk, line):
-                if e[0] == 'say':
-                    jobs[(e[1], e[2])] = None
+            for r in runs(tokens(cid, spk, line)).values():
+                jobs[run_key(r)] = None
     keys = list(jobs)
-    paths = await asyncio.gather(*[tts(v, txt, sem) for v, txt in keys])
+    paths = await asyncio.gather(*[tts(k, sem) for k in keys])
     tts_paths = dict(zip(keys, paths))
     meta = json.load(open(META)) if os.path.exists(META) else {}
     sfx_cache = {}

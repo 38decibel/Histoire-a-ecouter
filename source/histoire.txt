@@ -12,8 +12,8 @@
 
 === P01
 @amb accueil
-Bonsoir à toi ! Tu es bien au chaud ? Alors ouvre grand tes oreilles…
-Aujourd'hui, on va vivre une aventure. Et dans cette aventure, le héros ou l'héroïne… ce n'est pas un prince, ni une princesse. Ce n'est pas un roi, ni une reine. Non… le héros ou l'héroïne de cette histoire… c'est toi !
+Bonsoir à toi ! Comment vas-tu ?
+Aujourd'hui, on va vivre une aventure. Et dans cette aventure, le personnage principal… ce n'est pas un prince, ni une princesse. Ce n'est pas un roi, ni une reine. Non… le personnage principal de cette histoire… c'est toi !
 Pendant l'histoire, tu vas devoir faire des choix. Écoute bien. Quand tu entends ce petit bruit-là…
 {carillon}
 … c'est que c'est à toi de décider ! Tu dis ta réponse bien fort à papa ou maman, et hop, l'histoire continue.
@@ -25,31 +25,31 @@ Dis ta couleur à papa ou maman !
 {carillon}
 
 === P03-rouge
-{ding} Rouge ! Rouge comme une fraise bien mûre. Quel joli sac !
+{ding} Tu as choisi un sac rouge, comme une fraise bien mûre. Quel joli sac !
 
 === P03-bleu
-{ding} Bleu ! Bleu comme le ciel quand il fait beau. Quel joli sac !
+{ding} Tu as choisi un sac bleu, comme le ciel quand il fait beau. Quel joli sac !
 
 === P03-jaune
-{ding} Jaune ! Jaune comme le soleil. Quel joli sac !
+{ding} Tu as choisi un sac jaune, comme le soleil. Quel joli sac !
 
 === P03-vert
-{ding} Vert ! Vert comme une petite grenouille. Quel joli sac !
+{ding} Tu as choisi un sac vert, comme une petite grenouille. Quel joli sac !
 
 === P03-rose
-{ding} Oh, du rose ! Rose comme une barbe à papa. Quel joli sac !
+{ding} Tu as choisi un sac rose, comme une barbe à papa. Quel joli sac !
 
 === P03-violet
-{ding} Oh, du violet ! Violet comme les fleurs de lavande. Quel joli sac !
+{ding} Tu as choisi un sac violet, comme les fleurs de lavande. Quel joli sac !
 
 === P04
 Bravo, tu as compris le jeu ! Mets ton sac sur ton dos… {zip} voilà.
 {@amb stop}
-Maintenant, chut… {pause} Écoute… {voix_lointaine} Tu entends ? Quelqu'un t'appelle…
+Maintenant, chut… {pause} Écoute bien… {voix_lointaine} Tu entends ? Quelqu'un t'appelle…
 
 === P05
 {fee_long}
-L: Coucou… C'est moi, Lumina, la fée des rêves. J'ai besoin de ton aide ! Cette nuit, {vent} un grand coup de vent a soufflé dans le ciel, et mes trois étoiles magiques sont tombées dans la forêt. Sans elles, je ne peux plus envoyer de jolis rêves aux enfants… Est-ce que tu veux bien m'aider à les retrouver ?
+L: Coucou… C'est moi, Lumina, la fée des rêves. J'ai besoin de ton aide ! Cette nuit, {vent} un grand coup de vent a soufflé dans le ciel, et mes trois étoiles magiques sont tombées dans le pays enchanté : une dans la forêt, une près de la rivière, et une tout en haut de la colline. Sans elles, je ne peux plus envoyer de jolis rêves aux enfants… Est-ce que tu veux bien m'aider à les retrouver ?
 {pause}
 L: Oh, merci ! Je savais que je pouvais compter sur toi.
 Alors… en route pour la forêt enchantée !
@@ -57,20 +57,20 @@ Alors… en route pour la forêt enchantée !
 === E1-01
 @amb foret
 Te voilà à l'entrée de la forêt enchantée. Les arbres sont si grands qu'ils chatouillent les nuages. Les feuilles bougent tout doucement… {bruissement} comme si elles se racontaient des secrets.
-{pas_feuilles} Tu marches, tu marches… et soudain, le chemin se sépare en deux.
+{pas_feuilles} Tu marches un long moment… et soudain, le chemin se sépare en deux.
 D'un côté, un chemin plein de fleurs de toutes les couleurs, qui sentent bon comme un bouquet.
-De l'autre, un chemin de petites pierres qui brillent, qui brillent, comme des bonbons de lumière.
+De l'autre, un chemin de petites pierres toutes brillantes, comme des bonbons de lumière.
 Quel chemin choisis-tu ? Les fleurs ? Ou les pierres brillantes ?
 {carillon}
 
 === E1-A
-Le chemin des fleurs ! Tu marches au milieu des tulipes, des marguerites et des coquelicots. Une abeille passe devant ton nez… {abeille} Elle te fait un petit coucou avec ses ailes.
+Tu as choisi le chemin des fleurs ! Tu marches au milieu des tulipes, des marguerites et des coquelicots. Une abeille passe devant ton nez… {abeille} Elle te fait un petit coucou avec ses ailes.
 Les fleurs sont si hautes qu'elles te chatouillent les genoux ! {rire}
 Et puis, au bout du chemin, derrière un gros buisson… {buisson} quelque chose bouge.
 
 === E1-B
-Le chemin des pierres brillantes ! À chaque pas, les pierres chantent sous tes pieds… {tintements_cristallins} et elles s'allument : une rouge, une bleue, une dorée… Comme si tu marchais sur un arc-en-ciel !
-Tu sautes d'une pierre à l'autre : hop, hop, hop !
+Tu as choisi le chemin des pierres brillantes ! À chaque pas, les pierres chantent sous tes pieds… {tintements_cristallins} et elles s'allument : une rouge, une bleue, une dorée… Comme si tu marchais sur un arc-en-ciel !
+Tu sautes d'une pierre à l'autre : hop hop hop !
 Au bout du chemin, il y a un gros rocher tout rond, couvert de mousse. Et assis dessus… {grelots} un tout petit lutin, avec un bonnet pointu et des chaussons à grelots !
 
 
@@ -81,19 +81,19 @@ Quel instrument veux-tu donner à Pirouette ? Le tambour ? La flûte ? Ou les cl
 {carillon}
 
 === E1-L-tambour
-Le tambour ! Pirouette le prend dans ses petits bras, et il tape dessus, de toutes ses forces : {tambour}
+Tu as choisi le tambour ! Pirouette le prend dans ses petits bras, et il tape dessus, de toutes ses forces : {tambour}
 Allez, joue avec lui ! Tape bien fort sur tes genoux !
 {pause 3}
 Bravo ! Pirouette danse en sautant d'un pied sur l'autre, et ses grelots font la musique avec vous. {grelots}
 
 === E1-L-flute
-La flûte ! Pirouette la porte à sa bouche, et il joue un joli petit air : {flute}
-Allez, chante avec lui ! Fais « la, la, la » tout doucement !
+Tu as choisi la flûte ! Pirouette la porte à sa bouche, et il joue un joli petit air : {flute}
+Allez, chante avec lui ! Fais la la la, tout doucement !
 {pause 3}
 Bravo ! Pirouette tourne sur lui-même comme une toupie, tellement il est content. {grelots}
 
 === E1-L-clochettes
-Les clochettes ! Pirouette les secoue au-dessus de sa tête : {clochettes}
+Tu as choisi les clochettes ! Pirouette les secoue au-dessus de sa tête : {clochettes}
 Allez, joue avec lui ! Secoue tes mains en l'air, comme des petites clochettes !
 {pause 3}
 Bravo ! Pirouette fait une grande pirouette… c'est pour ça qu'il s'appelle comme ça ! {grelots}
@@ -102,33 +102,33 @@ Bravo ! Pirouette fait une grande pirouette… c'est pour ça qu'il s'appelle co
 Et tout à coup… {rocher} le gros rocher se met à trembler. Il s'ouvre en deux, tout doucement, comme une coquille d'œuf.
 Et au milieu… quelque chose brille.
 {jingle_etoile} C'est… la première étoile de Lumina !
-Pirouette saute de joie : « Merci ! Grâce à ta musique, mon rocher s'est ouvert ! »
+Pirouette est si content qu'il saute partout, et il te dit : « Merci ! Grâce à ta musique, mon rocher s'est ouvert ! »
 === E1-R-lapin
-Qui est là ? … C'est un petit lapin blanc, avec de grandes oreilles toutes douces ! Mais il a l'air tout triste. Il te dit tout doucement : « J'ai tellement faim… Tu n'aurais pas des carottes ? »
+Qui peut bien se cacher là ? … C'est un petit lapin blanc, avec de grandes oreilles toutes douces ! Mais il a l'air tout triste. Il te dit tout doucement : « J'ai tellement faim… Tu n'aurais pas des carottes ? »
 {zip} Tu ouvres ton sac à dos magique… {scintillement} et dedans, il y a des carottes !
 Combien de carottes veux-tu donner au petit lapin ? Une, deux, trois, quatre ou cinq ?
 {carillon}
 
 === E1-R-herisson
-Qui est là ? … C'est un petit hérisson tout rond, avec ses piquants et son petit nez noir qui renifle… {reniflement} Mais il a l'air tout triste. Il te dit tout doucement : « J'ai tellement faim… Tu n'aurais pas des pommes ? »
+Qui peut bien se cacher là ? … C'est un petit hérisson tout rond, avec ses piquants et son petit nez noir qui renifle… {reniflement} Mais il a l'air tout triste. Il te dit tout doucement : « J'ai tellement faim… Tu n'aurais pas des pommes ? »
 {zip} Tu ouvres ton sac à dos magique… {scintillement} et dedans, il y a des pommes !
 Combien de pommes veux-tu donner au petit hérisson ? Une, deux, trois, quatre ou cinq ?
 {carillon}
 
 === E1-N1
-Une ! Une seule, mais une toute belle. Il la croque… {croc} Miam, qu'elle est bonne !
+Tu lui en donnes une seule, mais une toute belle. Il la croque… {croc} Il se régale, elle est délicieuse !
 
 === E1-N2
-Deux ! Une pour tout de suite, une pour plus tard. {croc x2} Miam !
+Tu lui en donnes deux : une pour tout de suite, une pour plus tard. {croc x2} Il se régale !
 
 === E1-N3
-Trois ! Une, deux, trois… {croc x3} Il se lèche les babines.
+Tu lui en donnes trois : une, deux, trois… {croc x3} Il se lèche les babines.
 
 === E1-N4
-Quatre ! Oh là là, quel festin ! {croc x4} Miam, miam !
+Tu lui en donnes quatre ! Quel grand festin ! {croc x4} Quel régal !
 
 === E1-N5
-Cinq ! Une pour chaque doigt de ta main ! {croc x5} Son petit ventre est tout rond.
+Tu lui en donnes cinq, une pour chaque doigt de ta main ! {croc x5} Son petit ventre est tout rond.
 
 === E1-E-lapin
 Le petit lapin saute de joie… {boing x3} « Merci ! Pour te remercier, je vais te montrer un secret. »
@@ -136,7 +136,7 @@ Il gratte la terre avec ses pattes… {grattement} Et là, au fond d'un petit tr
 {jingle_etoile} C'est… la première étoile de Lumina !
 
 === E1-E-herisson
-Le petit hérisson est si content qu'il se roule en boule et {roulade} roule, roule, roule dans les feuilles mortes…
+Le petit hérisson est si content qu'il se roule en boule et {roulade} fait des roulades dans les feuilles mortes…
 Et quand il se déroule… regarde ! Quelque chose de brillant est resté accroché à ses piquants.
 {jingle_etoile} C'est… la première étoile de Lumina !
 
@@ -157,42 +157,42 @@ Alors : le pont ? La feuille-bateau ? Ou les cailloux ?
 {carillon}
 
 === E2-A
-Le vieux pont en bois ! Tu poses un pied… {grincement} Le pont fait un drôle de bruit, comme s'il bâillait. Il est très vieux, mais très solide.
+Tu as choisi le vieux pont en bois ! Tu poses un pied… {grincement} Le pont fait un drôle de bruit, comme s'il bâillait. Il est très vieux, mais très solide.
 Tu avances tout doucement… {grincement} Et en dessous, regarde ! Des petits poissons argentés jouent à cache-cache entre les cailloux.
 Encore quelques pas… et voilà, tu es de l'autre côté !
 
 === E2-B
-La feuille-bateau ! Tu montes dessus, tout doucement… Elle bouge un peu, mais elle te porte comme un vrai petit bateau. {clapotis} La rivière te pousse gentiment.
+Tu as choisi la feuille-bateau ! Tu montes dessus, tout doucement… Elle bouge un peu, mais elle te porte comme un vrai petit bateau. {clapotis} La rivière te pousse gentiment.
 Tu glisses sur l'eau, le vent te caresse les cheveux… Quel beau voyage !
-Mais au lieu d'aller vers l'autre rive, la feuille tourne, tourne… et descend tranquillement la rivière. Elle s'arrête au pied d'un grand saule, dans un petit coin d'eau tout calme.
+Mais au lieu d'aller vers l'autre rive, la feuille fait un petit tour sur elle-même… et descend tranquillement la rivière. Elle s'arrête au pied d'un grand saule, dans un petit coin d'eau tout calme.
 Et là… {plouf} une petite tête toute ronde sort de l'eau, avec des moustaches qui gigotent !
 
 
 === E2-LO
-C'est une loutre ! Une petite loutre toute mouillée, avec des yeux brillants comme des billes. Elle fait une galipette dans l'eau {clapotis} et elle te dit : « Bonjour ! Moi, c'est Frisette. Tu cherches une étoile ? J'en ai vu une tomber par ici… et je l'ai cachée, pour jouer ! Si tu joues avec moi, je te la donne. »
+Mais c'est une loutre ! Une petite loutre toute mouillée, avec des yeux brillants comme des billes. Elle fait une galipette dans l'eau {clapotis} et elle te dit : « Bonjour ! Moi, c'est Frisette. Tu cherches une étoile ? J'en ai vu une tomber par ici… et je l'ai cachée, pour jouer ! Si tu joues avec moi, je te la donne. »
 À quoi veux-tu jouer avec Frisette ? Aux ricochets ? À cache-cache ? Ou à faire des bulles ?
 {carillon}
 
 === E2-LO-ricochets
-Les ricochets ! Frisette te donne un petit caillou, tout plat et tout lisse. Tu le lances sur l'eau… {ricochet} Il saute une fois, deux fois, trois fois ! Frisette applaudit avec ses petites pattes.
-« Bravo ! À moi, maintenant ! » Elle lance son caillou… {ricochet} et il rebondit, rebondit… jusque sur une feuille de nénuphar. Et sur cette feuille… quelque chose brille ! C'est là que Frisette avait caché l'étoile.
+Vous allez jouer aux ricochets ! Frisette te donne un petit caillou, tout plat et tout lisse. Tu le lances sur l'eau… {ricochet} Il saute une fois, deux fois, trois fois ! Frisette applaudit avec ses petites pattes.
+« Bravo ! À moi, maintenant ! » Elle lance son caillou… {ricochet} et il fait plein de petits bonds… jusque sur une feuille de nénuphar. Et sur cette feuille… quelque chose brille ! C'est là que Frisette avait caché l'étoile.
 
 === E2-LO-cache
-Cache-cache ! Frisette ferme les yeux et elle compte. Compte avec elle ! Un… {pause 1} deux… {pause 1} trois… {pause 1} quatre… {pause 1} cinq !
+Vous allez jouer à cache-cache ! Frisette ferme les yeux et elle compte. Compte avec elle ! Un… {pause 1} deux… {pause 1} trois… {pause 1} quatre… {pause 1} cinq !
 Toi, tu te caches derrière le grand saule. Chut… Frisette cherche partout : sous l'eau, derrière les roseaux… « Trouvé ! » {rire}
-« À moi de me cacher ! » Elle plonge… {plouf} Tu regardes partout, partout… et tout au fond de l'eau, tu vois une petite lumière qui brille ! C'est là que Frisette avait caché l'étoile.
+« À moi de me cacher ! » Elle plonge… {plouf} Tu cherches dans tous les coins… et tout au fond de l'eau, tu vois une petite lumière qui brille ! C'est là que Frisette avait caché l'étoile.
 
 === E2-LO-bulles
-Les bulles ! Frisette met son museau dans l'eau et elle souffle très fort : {bulles} Plein de bulles remontent à la surface !
+Vous allez faire des bulles ! Frisette met son museau dans l'eau et elle souffle très fort : {bulles} Plein de bulles remontent à la surface !
 À toi, maintenant : souffle très fort, comme Frisette !
 {pause 2}
-{bulles} Bravo ! Les bulles montent, montent… et la plus grosse est toute brillante. {pop} Elle éclate… et quelque chose tombe dans tes mains. C'est là que Frisette avait caché l'étoile !
+{bulles} Bravo ! Les bulles remontent vers le ciel… et la plus grosse est toute brillante. {pop} Elle éclate… et quelque chose tombe dans tes mains. C'est là que Frisette avait caché l'étoile !
 
 === E2-LO-FIN
 {jingle_etoile} C'est… la deuxième étoile de Lumina !
 Frisette fait une dernière galipette pour te dire au revoir… {plouf} et ta feuille-bateau te ramène tout doucement sur la rive. Au revoir, Frisette !
 === E2-C
-Les gros cailloux ! Tu prends ton élan… et hop ! Un caillou. Hop ! Deux cailloux. Hop ! Trois cailloux…
+Tu as choisi les gros cailloux ! Tu prends ton élan… et hop ! Un caillou. Hop ! Deux cailloux. Hop ! Trois cailloux…
 Oh ! Le quatrième caillou est tout glissant… {plouf} Ton pied touche l'eau. Elle est toute fraîche ! Ça chatouille ! {rire}
 Allez, encore un saut… hop ! Et te voilà de l'autre côté, avec juste un petit pied mouillé.
 Mais… chut ! Écoute bien… Quelqu'un pleure tout doucement, là, dans les grands roseaux.
@@ -205,19 +205,19 @@ Bien sûr ! Mais où chercher ? Derrière la cascade ? Dans le vieux tronc d'arb
 {carillon}
 
 === E2-LI-cascade
-La cascade ! Tu t'approches… {cascade} L'eau tombe en faisant plein de petites gouttes qui brillent au soleil, comme des perles.
+Tu vas chercher derrière la cascade ! Tu t'approches… {cascade} L'eau tombe en faisant plein de petites gouttes qui brillent au soleil, comme des perles.
 Et derrière le rideau d'eau… deux grandes ailes bleues ! C'est la maman de Zinzoline ! Elle avait caché l'étoile là, bien au sec, derrière la cascade.
 
 === E2-LI-tronc
-Le vieux tronc d'arbre ! Il est tout creux, et il fait bien sombre dedans. Tu frappes tout doucement : {toc}
+Tu vas chercher dans le vieux tronc d'arbre ! Il est tout creux, et il fait bien sombre dedans. Tu frappes tout doucement : {toc}
 Une petite voix répond : « Qui est là ? » C'est la maman de Zinzoline ! Elle faisait une petite sieste à l'abri, avec l'étoile tout contre elle, comme une veilleuse.
 
 === E2-LI-fleurs
-Les fleurs au bord de l'eau ! Il y a des iris jaunes, des fleurs violettes, et des petites abeilles qui butinent. {abeille}
+Tu vas chercher dans les fleurs au bord de l'eau ! Il y a des iris jaunes, des fleurs violettes, et des petites abeilles qui butinent. {abeille}
 Et posée sur la plus grande fleur… une grande libellule aux ailes bleues. C'est la maman de Zinzoline ! Elle avait caché l'étoile au creux d'un pétale, comme dans un petit berceau.
 
 === E2-LI-FIN
-Zinzoline vole vers sa maman et lui fait plein de câlins. {ailes_libellule} « Merci ! Merci ! Grâce à toi, j'ai retrouvé ma maman ! »
+Zinzoline vole vers sa maman et lui fait plein de câlins. {ailes_libellule} « Merci beaucoup ! Grâce à toi, j'ai retrouvé ma maman ! »
 La maman libellule te donne l'étoile avec un grand sourire.
 {jingle_etoile} C'est… la deuxième étoile de Lumina !
 Les deux libellules font trois petits tours autour de ta tête pour te dire au revoir… {ailes_libellule} Au revoir, Zinzoline !
@@ -227,11 +227,11 @@ Et au bord de la mare… tu entends quelqu'un…
 
 === E2-R-canards
 {canards} C'est une famille de canards ! La maman cane devant, et derrière elle, un, deux, trois petits canetons tout jaunes, en file indienne.
-La maman cane te dit : « Bonjour ! Tu cherches quelque chose ? Cette nuit, j'ai vu tomber une lumière du ciel… tout droit dans notre mare ! Elle s'est cachée sous un nénuphar. »
+La maman cane s'approche de toi, et elle te dit : « Bonjour ! Tu cherches quelque chose ? Cette nuit, j'ai vu tomber une lumière du ciel… tout droit dans notre mare ! Elle s'est cachée sous un nénuphar. »
 
 === E2-R-grenouille
 {grenouille} C'est une petite grenouille verte, assise sur une pierre. Elle a de gros yeux tout ronds qui te regardent avec curiosité.
-Elle te dit : « Bonjour ! Tu cherches quelque chose ? Cette nuit, j'ai vu tomber une lumière du ciel… tout droit dans ma mare ! Elle s'est cachée sous un nénuphar. »
+Elle s'approche de toi, et elle te dit : « Bonjour ! Tu cherches quelque chose ? Cette nuit, j'ai vu tomber une lumière du ciel… tout droit dans ma mare ! Elle s'est cachée sous un nénuphar. »
 
 === E2-Q
 Une étoile de Lumina ! Mais sous quel nénuphar ? Regarde bien : sur chacun, il y a une fleur.
@@ -241,7 +241,7 @@ Sous lequel veux-tu regarder ? Le rose ? Le blanc ? Ou le jaune ?
 
 === E2-C-rose
 Tu soulèves doucement le nénuphar à la fleur rose… {bulles} Un petit poisson rouge sort la tête et te fait des bulles, comme des bisous !
-Et dans la plus grosse bulle… quelque chose brille. La bulle monte, monte… et… {pop} Elle éclate juste dans tes mains.
+Et dans la plus grosse bulle… quelque chose brille. La bulle s'envole tout doucement… et… {pop} Elle éclate juste dans tes mains.
 {jingle_etoile} C'est… la deuxième étoile de Lumina !
 
 === E2-C-blanc
@@ -258,7 +258,7 @@ Au milieu, posée sur l'eau comme sur un coussin… quelque chose brille.
 La maman cane et ses canetons battent des ailes de joie… {canards} Les trois petits canetons font la ronde autour de toi. Au revoir, les canards !
 
 === E2-AU-grenouille
-La petite grenouille saute de joie : hop, hop, hop ! {grenouille} Elle saute si haut qu'elle touche presque les nuages. Au revoir, petite grenouille !
+La petite grenouille saute de joie : hop hop hop ! {grenouille} Elle saute si haut qu'elle touche presque les nuages. Au revoir, petite grenouille !
 
 === E2-FIN
 {zip} Tu ranges la deuxième étoile dans ton sac à dos magique, tout contre la première. Et là… {tintement} Les deux étoiles se touchent et font une jolie musique.
@@ -291,37 +291,37 @@ Il brille d'une belle lumière rose, toute douce, comme une barbe à papa qui fe
 Il brille d'une belle lumière violette, toute douce, comme un petit bouquet de lavande ! Autour de toi, l'herbe et les arbres deviennent tout violets. Maintenant, tu y vois très bien.
 
 === E3-02
-Avec ta lumière magique, tu montes, tu montes la colline… {pas_herbe} Tout en haut, il y a deux endroits.
+Avec ta lumière magique, tu grimpes jusqu'en haut de la colline… {pas_herbe} Tout en haut, il y a deux endroits.
 D'un côté, une petite grotte… et dedans, on voit plein de minuscules points qui scintillent.
-De l'autre côté, un très, très grand arbre… et dans ses branches, deux gros yeux ronds qui clignent… {hibou}
+De l'autre côté, un arbre immense… et dans ses branches, deux gros yeux ronds qui clignent… {hibou}
 La dernière étoile est forcément là, quelque part… Où veux-tu aller ? Dans la grotte qui scintille ? Ou vers le grand arbre aux gros yeux ?
 {carillon}
 
 === E3-G1
-La grotte qui scintille ! Tu entres tout doucement…
+Tu as choisi la grotte qui scintille ! Tu entres tout doucement…
 {@amb grotte}
 {gouttes} Des petites gouttes tombent du plafond. Et quand tu parles, ta voix fait un écho rigolo.
 Les petits points qui scintillent… ce sont des lucioles ! Mais elles sont presque toutes endormies, et leur lumière est toute faible.
-Une petite luciole s'approche en bâillant : « Bonsoir… L'étoile de Lumina est tombée dans notre grotte. Mais elle était si fatiguée après son grand voyage qu'elle s'est endormie… et quand une étoile dort, elle ne brille plus du tout ! Pour la réveiller, il faut beaucoup, beaucoup de lumière : la lumière de toutes les lucioles ! Seulement… nous aussi, on dort à moitié. Alors pour nous réveiller… il faut faire un cri d'animal, très fort ! »
+Une petite luciole s'approche en bâillant : « Bonsoir… L'étoile de Lumina est tombée dans notre grotte. Mais elle était si fatiguée après son grand voyage qu'elle s'est endormie… et quand une étoile dort, elle ne brille plus du tout ! Pour la réveiller, il faut énormément de lumière : celle de toutes les lucioles ! Seulement… nous aussi, on dort à moitié. Alors pour nous réveiller… il faut faire un cri d'animal, très fort ! »
 Quel cri d'animal veux-tu faire ? Le chat ? La vache ? Ou le coq ?
 {carillon}
 
 === E3-G-chat
-Le chat ! Attention… à trois, tu fais le chat. Un… deux… trois ! {miaou}
+Tu as choisi le chat ! Attention… à trois, tu fais le chat. Un… deux… trois ! {miaou}
 {pause}
 Encore plus fort !
 {pause}
 {reveil_lucioles} Les lucioles ouvrent les yeux… une, puis dix, puis cent ! Elles rigolent : « Un chat dans notre grotte ? » {rire_luciole} Et elles s'allument toutes en même temps !
 
 === E3-G-vache
-La vache ! Attention… à trois, tu fais la vache. Un… deux… trois ! {meuh}
+Tu as choisi la vache ! Attention… à trois, tu fais la vache. Un… deux… trois ! {meuh}
 {pause}
 Encore plus fort !
 {pause}
 {reveil_lucioles} Avec l'écho de la grotte, ça résonne partout… {meuh_echo} Les lucioles ouvrent les yeux… une, puis dix, puis cent ! Et elles s'allument toutes en même temps !
 
 === E3-G-coq
-Le coq ! Attention… à trois, tu fais le coq. Un… deux… trois ! {cocorico}
+Tu as choisi le coq ! Attention… à trois, tu fais le coq. Un… deux… trois ! {cocorico}
 {pause}
 Encore plus fort !
 {pause}
@@ -329,27 +329,27 @@ Encore plus fort !
 
 === E3-G-FIN
 La grotte est toute illuminée, comme un ciel plein d'étoiles. Puis les lucioles s'envolent toutes ensemble vers le fond de la grotte… et se posent autour d'un petit caillou tout gris.
-Elles brillent, elles brillent, elles brillent… Et le petit caillou gris ouvre un œil… bâille… et se met à briller plus fort que tout le reste ! Ce n'était pas un caillou !
+Elles brillent de plus en plus fort… Et le petit caillou gris ouvre un œil… bâille… et se met à briller plus fort que tout le reste ! Ce n'était pas un caillou !
 {jingle_etoile} C'est… la troisième étoile de Lumina !
 Les lucioles volent autour de toi pour te dire merci, et elles t'accompagnent jusqu'à la sortie de la grotte.
 {@amb nuit}
 
 === E3-H1
-Le grand arbre ! Tu t'approches… Les gros yeux ronds clignent encore… {hibou}
-C'est un hibou ! Un vieux hibou très sage, avec des plumes toutes douces et des petites lunettes rondes sur le bec.
+Tu as choisi le grand arbre ! Tu t'approches… Les gros yeux ronds clignent encore… {hibou}
+Mais c'est un hibou ! Un vieux hibou très sage, avec des plumes toutes douces et des petites lunettes rondes sur le bec.
 « Bonsoir, toi qui voyages dans la nuit… Je garde la dernière étoile dans mon nid. Je te la donnerai avec plaisir… si tu réponds à ma devinette ! »
 Le hibou réfléchit… « Dis-moi : qu'est-ce qui brille dans la nuit ? »
 Est-ce que c'est… la lune ? Les yeux du chat ? Ou une lampe de poche ?
 {carillon}
 
 === E3-H-lune
-La lune ! {hibou_joyeux} « Bravo ! La lune brille toute la nuit, comme une grosse veilleuse dans le ciel. Quelle bonne réponse ! »
+Tu as répondu la lune ! {hibou_joyeux} « Bravo ! La lune brille toute la nuit, comme une grosse veilleuse dans le ciel. Quelle bonne réponse ! »
 
 === E3-H-chat
-Les yeux du chat ! {hibou_joyeux} « Bravo ! Les yeux du chat brillent dans le noir, comme deux petites billes. Quelle bonne réponse ! »
+Tu as répondu les yeux du chat ! {hibou_joyeux} « Bravo ! Les yeux du chat brillent dans le noir, comme deux petites billes. Quelle bonne réponse ! »
 
 === E3-H-lampe
-La lampe de poche ! {hibou_joyeux} « Bravo ! Une lampe de poche, ça brille très fort ! Moi aussi, j'aimerais bien en avoir une, pour lire mes livres la nuit… Quelle bonne réponse ! »
+Tu as répondu la lampe de poche ! {hibou_joyeux} « Bravo ! Une lampe de poche, ça brille très fort ! Moi aussi, j'aimerais bien en avoir une, pour lire mes livres la nuit… Quelle bonne réponse ! »
 
 === E3-H-FIN
 Le hibou ouvre grand ses ailes… {ailes} et s'envole jusqu'à son nid, tout en haut de l'arbre. Puis il redescend tout doucement… et dans ses pattes, quelque chose brille.
@@ -364,27 +364,27 @@ Bravo ! Tu as retrouvé les trois étoiles !
 === F-01
 @amb feerique
 C'est Lumina ! Elle est toute petite, avec des ailes qui brillent comme des bulles de savon.
-L: Tu as réussi ! Tu as retrouvé mes trois étoiles ! Merci, merci, merci !
-Tu ouvres ton sac à dos… {zip} et les trois étoiles s'envolent. Elles montent, montent, montent… {envol} jusque tout là-haut, dans le ciel. Et le ciel se rallume ! {jingle_etoile} Partout, les étoiles se mettent à briller.
+L: Tu as réussi ! Tu as retrouvé mes trois étoiles ! Un grand merci !
+Tu ouvres ton sac à dos… {zip} et les trois étoiles s'envolent. Elles s'envolent très haut… {envol} jusque tout là-haut, dans le ciel. Et le ciel se rallume ! {jingle_etoile} Partout, les étoiles se mettent à briller.
 L: Grâce à toi, cette nuit, tous les enfants vont faire de jolis rêves. Et toi… tu mérites une récompense.
 
 === F-SAC-rouge
-L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière rouge, rouge comme une fraise. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
+L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière rouge, comme une fraise. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
 
 === F-SAC-bleu
-L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière bleue, bleue comme le ciel. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
+L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière bleue, comme le ciel. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
 
 === F-SAC-jaune
-L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière jaune, jaune comme le soleil. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
+L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière jaune, comme le soleil. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
 
 === F-SAC-vert
-L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière verte, verte comme une petite grenouille. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
+L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière verte, comme une petite grenouille. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
 
 === F-SAC-rose
-L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière rose, rose comme une barbe à papa. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
+L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière rose, comme une barbe à papa. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
 
 === F-SAC-violet
-L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière violette, violette comme la lavande. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
+L: D'abord, ton sac à dos magique. Je lui laisse un petit morceau de lumière : {scintillement} une douce lumière violette, comme la lavande. Cette nuit, il brillera tout doucement près de ton lit, pour veiller sur toi.
 
 === F-R-compagnon-lapin
 L: Et puis… quelqu'un voudrait te dire bonne nuit.
@@ -405,7 +405,7 @@ L: Et puis… quelqu'un voudrait te dire bonne nuit.
 L: Pour cette nuit, il sera ton compagnon de rêve. Quand tu fermeras les yeux, il viendra te jouer une jolie musique dans tes rêves.
 Pirouette te fait un gros câlin, et ses grelots chantent tout doucement. {grelots}
 === F-R-voeu
-L: Et puis… je t'offre un vœu. Un vœu rien qu'à toi. Ferme les yeux… pense très fort à quelque chose qui te rend heureux ou heureuse… et dis-le tout bas à papa ou maman.
+L: Et puis… je t'offre un vœu, rien qu'à toi. Ferme les yeux… pense très fort à quelque chose qui te rend heureux ou heureuse… et dis-le tout bas à papa ou maman.
 {pause 5}
 {scintillement}
 L: C'est fait ! J'ai rangé ton vœu dans une petite étoile, tout là-haut. Cette nuit, elle va le garder bien au chaud, et veiller dessus.
@@ -417,7 +417,7 @@ L: Et puis… cette nuit, je vais t'envoyer un rêve spécial. Un rêve où tu v
 @amb berceuse
 L: Maintenant, c'est l'heure de dormir. Merci pour ton aide… Bonne nuit !
 {fee_depart} Et Lumina s'envole, tout doucement, vers les étoiles.
-Ce soir, le héros ou l'héroïne de cette histoire… c'était toi.
+Ce soir, le personnage principal de cette histoire… c'était toi.
 Pose ta tête sur l'oreiller… ferme les yeux… respire tout doucement…
 Et si un jour tu as envie de revenir dans la forêt enchantée, Lumina sera là. Et tu sais quoi ? L'aventure ne sera jamais tout à fait la même…
 Bonne nuit…

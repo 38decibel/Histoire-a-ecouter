@@ -1,6 +1,6 @@
 {
  "P01": {
-  "dur": 41.8,
+  "dur": 40.1,
   "amb": "accueil",
   "ambAt": []
  },
@@ -10,122 +10,122 @@
   "ambAt": []
  },
  "P03-rouge": {
-  "dur": 6.0,
-  "amb": null,
-  "ambAt": []
- },
- "P03-bleu": {
   "dur": 6.2,
   "amb": null,
   "ambAt": []
  },
+ "P03-bleu": {
+  "dur": 6.4,
+  "amb": null,
+  "ambAt": []
+ },
  "P03-jaune": {
-  "dur": 5.7,
+  "dur": 5.9,
   "amb": null,
   "ambAt": []
  },
  "P03-vert": {
-  "dur": 6.0,
-  "amb": null,
-  "ambAt": []
- },
- "P03-rose": {
   "dur": 6.3,
   "amb": null,
   "ambAt": []
  },
+ "P03-rose": {
+  "dur": 6.1,
+  "amb": null,
+  "ambAt": []
+ },
  "P03-violet": {
-  "dur": 6.8,
+  "dur": 6.3,
   "amb": null,
   "ambAt": []
  },
  "P04": {
-  "dur": 15.8,
+  "dur": 15.7,
   "amb": null,
   "ambAt": [
    {
-    "at": 5.76,
+    "at": 5.66,
     "amb": "stop"
    }
   ]
  },
  "P05": {
-  "dur": 35.4,
+  "dur": 40.5,
   "amb": null,
   "ambAt": []
  },
  "E1-01": {
-  "dur": 36.0,
+  "dur": 34.9,
   "amb": "foret",
   "ambAt": []
  },
  "E1-A": {
-  "dur": 21.7,
+  "dur": 22.1,
   "amb": null,
   "ambAt": []
  },
  "E1-B": {
-  "dur": 25.8,
+  "dur": 25.4,
   "amb": null,
   "ambAt": []
  },
  "E1-L": {
-  "dur": 36.3,
+  "dur": 35.8,
   "amb": null,
   "ambAt": []
  },
  "E1-L-tambour": {
-  "dur": 24.6,
+  "dur": 25.0,
   "amb": null,
   "ambAt": []
  },
  "E1-L-flute": {
-  "dur": 24.6,
+  "dur": 24.5,
   "amb": null,
   "ambAt": []
  },
  "E1-L-clochettes": {
-  "dur": 22.5,
+  "dur": 23.0,
   "amb": null,
   "ambAt": []
  },
  "E1-L-FIN": {
-  "dur": 22.7,
+  "dur": 23.7,
   "amb": null,
   "ambAt": []
  },
  "E1-R-lapin": {
-  "dur": 26.8,
+  "dur": 27.3,
   "amb": null,
   "ambAt": []
  },
  "E1-R-herisson": {
-  "dur": 28.3,
+  "dur": 28.8,
   "amb": null,
   "ambAt": []
  },
  "E1-N1": {
-  "dur": 7.1,
+  "dur": 7.5,
   "amb": null,
   "ambAt": []
  },
  "E1-N2": {
-  "dur": 6.1,
-  "amb": null,
-  "ambAt": []
- },
- "E1-N3": {
   "dur": 6.5,
   "amb": null,
   "ambAt": []
  },
+ "E1-N3": {
+  "dur": 6.6,
+  "amb": null,
+  "ambAt": []
+ },
  "E1-N4": {
-  "dur": 7.6,
+  "dur": 6.8,
   "amb": null,
   "ambAt": []
  },
  "E1-N5": {
-  "dur": 7.7,
+  "dur": 7.6,
   "amb": null,
   "ambAt": []
  },
@@ -135,7 +135,7 @@
   "ambAt": []
  },
  "E1-E-herisson": {
-  "dur": 18.1,
+  "dur": 17.1,
   "amb": null,
   "ambAt": []
  },
@@ -150,12 +150,12 @@
   "ambAt": []
  },
  "E2-A": {
-  "dur": 21.5,
+  "dur": 22.1,
   "amb": null,
   "ambAt": []
  },
  "E2-B": {
-  "dur": 31.6,
+  "dur": 32.2,
   "amb": null,
   "ambAt": []
  },
@@ -165,52 +165,52 @@
   "ambAt": []
  },
  "E2-LO-ricochets": {
-  "dur": 29.7,
+  "dur": 29.4,
   "amb": null,
   "ambAt": []
  },
  "E2-LO-cache": {
-  "dur": 33.2,
+  "dur": 33.4,
   "amb": null,
   "ambAt": []
  },
  "E2-LO-bulles": {
-  "dur": 26.5,
+  "dur": 26.9,
   "amb": null,
   "ambAt": []
  },
  "E2-LO-FIN": {
-  "dur": 14.4,
+  "dur": 13.8,
   "amb": null,
   "ambAt": []
  },
  "E2-C": {
-  "dur": 31.9,
-  "amb": null,
-  "ambAt": []
- },
- "E2-LI": {
   "dur": 32.5,
   "amb": null,
   "ambAt": []
  },
+ "E2-LI": {
+  "dur": 32.1,
+  "amb": null,
+  "ambAt": []
+ },
  "E2-LI-cascade": {
-  "dur": 18.4,
+  "dur": 19.3,
   "amb": null,
   "ambAt": []
  },
  "E2-LI-tronc": {
-  "dur": 16.7,
+  "dur": 17.3,
   "amb": null,
   "ambAt": []
  },
  "E2-LI-fleurs": {
-  "dur": 18.8,
+  "dur": 19.5,
   "amb": null,
   "ambAt": []
  },
  "E2-LI-FIN": {
-  "dur": 25.1,
+  "dur": 24.0,
   "amb": null,
   "ambAt": []
  },
@@ -220,12 +220,12 @@
   "ambAt": []
  },
  "E2-R-canards": {
-  "dur": 21.8,
+  "dur": 22.9,
   "amb": null,
   "ambAt": []
  },
  "E2-R-grenouille": {
-  "dur": 20.1,
+  "dur": 21.5,
   "amb": null,
   "ambAt": []
  },
@@ -255,7 +255,7 @@
   "ambAt": []
  },
  "E2-AU-grenouille": {
-  "dur": 9.7,
+  "dur": 9.2,
   "amb": null,
   "ambAt": []
  },
@@ -264,13 +264,13 @@
   "amb": null,
   "ambAt": [
    {
-    "at": 10.59,
+    "at": 10.58,
     "amb": "soir"
    }
   ]
  },
  "E3-01": {
-  "dur": 19.0,
+  "dur": 18.9,
   "amb": "nuit",
   "ambAt": []
  },
@@ -305,67 +305,67 @@
   "ambAt": []
  },
  "E3-02": {
-  "dur": 32.4,
+  "dur": 31.8,
   "amb": null,
   "ambAt": []
  },
  "E3-G1": {
-  "dur": 55.0,
+  "dur": 54.8,
   "amb": null,
   "ambAt": [
    {
-    "at": 3.85,
+    "at": 4.38,
     "amb": "grotte"
    }
   ]
  },
  "E3-G-chat": {
-  "dur": 25.9,
+  "dur": 26.4,
   "amb": null,
   "ambAt": []
  },
  "E3-G-vache": {
-  "dur": 26.6,
+  "dur": 27.2,
   "amb": null,
   "ambAt": []
  },
  "E3-G-coq": {
-  "dur": 26.1,
+  "dur": 26.6,
   "amb": null,
   "ambAt": []
  },
  "E3-G-FIN": {
-  "dur": 30.6,
+  "dur": 30.1,
   "amb": null,
   "ambAt": [
    {
-    "at": 30.25,
+    "at": 29.73,
     "amb": "nuit"
    }
   ]
  },
  "E3-H1": {
-  "dur": 35.6,
+  "dur": 36.3,
   "amb": null,
   "ambAt": []
  },
  "E3-H-lune": {
-  "dur": 9.4,
+  "dur": 10.0,
   "amb": null,
   "ambAt": []
  },
  "E3-H-chat": {
-  "dur": 9.4,
+  "dur": 10.0,
   "amb": null,
   "ambAt": []
  },
  "E3-H-lampe": {
-  "dur": 13.3,
+  "dur": 13.9,
   "amb": null,
   "ambAt": []
  },
  "E3-H-FIN": {
-  "dur": 21.1,
+  "dur": 20.8,
   "amb": null,
   "ambAt": []
  },
@@ -375,37 +375,37 @@
   "ambAt": []
  },
  "F-01": {
-  "dur": 37.4,
+  "dur": 34.9,
   "amb": "feerique",
   "ambAt": []
  },
  "F-SAC-rouge": {
-  "dur": 15.3,
+  "dur": 14.8,
   "amb": null,
   "ambAt": []
  },
  "F-SAC-bleu": {
-  "dur": 15.0,
+  "dur": 14.7,
   "amb": null,
   "ambAt": []
  },
  "F-SAC-jaune": {
-  "dur": 15.3,
+  "dur": 14.9,
   "amb": null,
   "ambAt": []
  },
  "F-SAC-vert": {
-  "dur": 15.7,
+  "dur": 15.3,
   "amb": null,
   "ambAt": []
  },
  "F-SAC-rose": {
-  "dur": 15.5,
+  "dur": 15.1,
   "amb": null,
   "ambAt": []
  },
  "F-SAC-violet": {
-  "dur": 15.6,
+  "dur": 15.1,
   "amb": null,
   "ambAt": []
  },
@@ -425,7 +425,7 @@
   "ambAt": []
  },
  "F-R-voeu": {
-  "dur": 28.4,
+  "dur": 27.5,
   "amb": null,
   "ambAt": []
  },
@@ -435,7 +435,7 @@
   "ambAt": []
  },
  "F-FIN": {
-  "dur": 35.0,
+  "dur": 35.2,
   "amb": "berceuse",
   "ambAt": []
  }

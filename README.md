@@ -29,9 +29,12 @@ du téléphone (PWA) et utilisable hors connexion une fois chargé.
 1. Corriger le texte dans `source/histoire.txt` (et si besoin les choix dans `docs/scenario.json`).
 2. Régénérer : `pip install edge-tts numpy scipy` (+ ffmpeg), puis
    `python3 tools/build_sfx.py` (une fois) et `python3 tools/gen_clips.py` (ou `gen_clips.py P01 E1-A` pour quelques clips).
-3. Changer `CACHE` dans `docs/sw.js` (`lumina-v2`…) pour que les téléphones rechargent les nouveaux sons.
+3. Vérifier la prononciation : `pip install faster-whisper` puis `python3 tools/check_fr.py` (Whisper retranscrit chaque passage et signale ceux qui ne correspondent pas au texte : mot lu à l'anglaise, à l'espagnole…).
+4. Changer `CACHE` dans `docs/sw.js` (`lumina-v2`…) pour que les téléphones rechargent les nouveaux sons.
 
-Voix : narrateur **Henri**, Lumina **Éloïse** (voix neuronales Microsoft via `edge-tts`) ; les paroles entre « » des
+Les passages d'une même voix sont synthétisés d'un seul tenant puis découpés aux balises de bruitage (minutage des mots), pour éviter les mots isolés mal prononcés.
+
+Voix : narrateur **Rémy**, Lumina **Éloïse** (voix neuronales Microsoft via `edge-tts`) ; les paroles entre « » des
 animaux et du hibou utilisent la voix du narrateur plus aiguë / plus grave (réglages `VOICES` et `QUOTE_STYLE`).
 
 ## Crédits sonores
